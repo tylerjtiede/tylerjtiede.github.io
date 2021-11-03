@@ -1,0 +1,71 @@
+/* Master Styles */
+body {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif; 
+    margin: 0px;
+    background-color: rgb(56, 56, 56);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* nav styles */
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px;
+}
+
+.left-side  {
+    margin-left: 300px;
+    display: flex;
+}
+
+.right-side {
+    margin-right: 300px;
+}
+
+.nav-wrapper > .right-side > div {
+    color: #d8d8d8;
+    text-transform: lowercase;
+    font-size: 1.5em;
+}
+
+.nav-wrapper > .left-side > div {
+    margin-right: 20px;
+    font-size: 1.1em;
+    text-transform: lowercase;
+}
+
+.nav-link-wrapper {
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s;
+}
+
+.nav-link-wrapper a {
+    color: #d8d8d8;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover {
+    border-bottom: 1px solid aquamarine;
+}
+
+.nav-link-wrapper a:hover {
+    color: aquamarine;
+}
+
+/* portfolio styles */
+
+.about-section {
+    font-size: 1.1em;
+    margin-left: 300px;
+    padding: 38px;
+    color: #c5c5c5;
+    margin-right: 800px;
+}
+
