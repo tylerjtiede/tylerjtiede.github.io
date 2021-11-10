@@ -61,30 +61,37 @@ body {
 
 /* portfolio styles */
 
-.about-section {
-    font-size: 1.1em;
-    margin-left: 20vw;
-    padding: 2vw;
+.about-section-header {
+    font-size: 1.6em;
+    margin-left: 22vw;
     color: #c5c5c5;
     margin-right: 40vw;
 }
 
-.headers-wrapper {
-    font-size: 1.1em;
-    margin-left: 20vw;
-    padding: 2vw;
+.projects-header-wrapper {
+    font-size: 1.6em;
+    margin-left: 21vw;
+    padding: 1vw;
     color: #c5c5c5;
     margin-right: 40vw;
+    font-style: bold;
 }
 
 .project-content-wrapper {
     margin-left: 22vw;
 }
 
+.project-title {
+    margin-left: 21vw;
+    padding: 1vw;
+    color: #c5c5c5;
+    font-size: 1.1em;
+}
+
 .text {
     font-size: .9em;
-    margin-left: 20vw;
-    padding: 2vw;
+    margin-left: 21vw;
+    padding: 1vw;
     color: #c5c5c5;
     margin-right: 40vw;
 }
