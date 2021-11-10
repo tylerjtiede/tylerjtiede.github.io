@@ -15,16 +15,16 @@ body {
 .nav-wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 38px;
+    padding: 2vw;
 }
 
 .left-side  {
-    margin-left: 300px;
+    margin-left: 20vw;
     display: flex;
 }
 
 .right-side {
-    margin-right: 300px;
+    margin-right: 20vw;
 }
 
 .nav-wrapper > .right-side > div {
