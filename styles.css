@@ -2,7 +2,8 @@
 body {
     font-family: 'Zen Kaku Gothic Antique', sans-serif; 
     margin: 0px;
-    background-color: rgb(56, 56, 56);
+    background-color: #383838;
+    text-transform: lowercase;
 }
 
 .container {
@@ -12,12 +13,6 @@ body {
 
 /* nav styles */
 
-.nav-wrapper {
-    display: flex;
-    justify-content: space-between;
-    padding: 2vw;
-}
-
 .left-side  {
     margin-left: 20vw;
     display: flex;
@@ -25,12 +20,13 @@ body {
 
 .right-side {
     margin-right: 20vw;
+    display: flex;
 }
 
 .nav-wrapper > .right-side > div {
-    color: #d8d8d8;
     text-transform: lowercase;
     font-size: 1.5em;
+    text-align: center;
 }
 
 .nav-wrapper > .left-side > div {
@@ -39,24 +35,75 @@ body {
     text-transform: lowercase;
 }
 
-.nav-link-wrapper {
-    height: 22px;
-    border-bottom: 1px solid transparent;
-    transition: border-bottom 0.5s;
+.navbar {
+    justify-content: space-between;
+    display: flex;
+    overflow: hidden;
+    background-color: #383838;
 }
 
-.nav-link-wrapper a {
-    color: #d8d8d8;
+.navbar a {
+    float: left;
+    font-size: 1em;
+    color: #c5c5c5;
+    text-align: center;
+    padding: 10px 14px;
     text-decoration: none;
-    transition: color 0.5s;
 }
 
-.nav-link-wrapper:hover {
-    border-bottom: 1px solid aquamarine;
+.brand {
+    color: #c5c5c5;
+    padding-top: 10px;
 }
 
-.nav-link-wrapper a:hover {
-    color: aquamarine;
+/* dropdown */
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    color: #c5c5c5;
+    padding: 10px 14px;
+    background-color: inherit;
+    /* mobile stuff vv */
+    font-family: inherit; 
+    margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #505050;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #565656;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: #c5c5c5;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover{
+    background-color: #3b3b3b;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* portfolio styles */
@@ -94,4 +141,17 @@ body {
     padding: 1vw;
     color: #c5c5c5;
     margin-right: 40vw;
+}
+
+/* ultimate frisbee page */
+
+.ultimate-wrapper {
+    margin-left: 22vw;
+}
+
+.ultimate-title {
+    margin-left: 21vw;
+    padding: 1vw;
+    color: #c5c5c5;
+    font-size: 1.1em;
 }
