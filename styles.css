@@ -143,6 +143,14 @@ body {
     margin-right: 40vw;
 }
 
+.text > a {
+    color: aqua;
+}
+
+.text > a:active {
+    color: blue;
+}
+
 /* ultimate frisbee page */
 
 .ultimate-wrapper {
