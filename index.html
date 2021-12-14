@@ -76,6 +76,45 @@
             </div>
 
             <div class="project-title">
+                Arduino Tea AutoBrewer
+            </div>
+
+            <div class="project-content-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/s3Ynh-EgRVM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="text">
+                This is a project I worked on in 2019 in an undergraduate class using an Arduino.
+                <br>
+                The video explains most of the details of the project.
+            </div>
+
+            <div class="project-title">
+                Arduino/Raspberry Pi Weather Station
+            </div>
+
+            <div class="text">
+                This is a project I worked on in 2020-2021, which unfortunately I didn't quite finish.
+                Also unfortunately, since I was busy with finals before graduating,
+                I forgot to document my work and left everything in a locked room somewhere at SUNY Geneseo.
+                All I have left is a .ino file that I made in the early stages of the project.
+                <br>
+                I'll give a brief description of the project here:
+                <br>
+                I bought <a target="_blank" href="https://www.sparkfun.com/products/15901">weather sensors</a> off of sparkfun,
+                along with its accompanying <a target="_blank" href="https://www.sparkfun.com/products/13956">weather sheild</a>.
+                I connnected these to an arduino and ran some code which collected data and spit it out in the serial monitor periodically.
+                I had the arduino connected and being powered by a raspberry pi.
+                On the pi, I wrote a python script that would take the data coming out of the serial monitor and write it to a text file.
+                Then, using a program called <a target="_blank" href="https://weewx.com/">WeeWX</a> to collect the data.
+                I used a method in WeeWX called "fileparse" which basically takes the data from the text file and sends it to a server.
+                This data is then presented on a local site using WeeWX's default interface using apache.
+                <br>
+                I had more plans for the project but this is where I left off.
+                Later plans included adding support to the station so it would last in more severe weather conditions,
+                connecting it to a battery, solar panel, and possibly some other software improvements to get more data or improve the interface.
+            </div>
+
+            <div class="project-title">
                 Twitter Bot
             </div>
 
