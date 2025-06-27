@@ -3,139 +3,121 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tyler Tiede</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <div class="container">
-        <div class="navbar">
-            <div class="left-side">
-                <a rel="noopener noreferrer" href="index.html">home</a>
+    <header class="navbar">
+        <nav class="left-side">
+            <a href="index.html">home</a>
 
-                <div class="dropdown">
-                    <button class="dropbtn">resources</button>
-                    <div class="dropdown-content">
-                        <a rel="noopener noreferrer" target="_blank" href="resume/resume-2025.pdf">resume</a>
-                        <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/tyler-tiede-628ba2168/">linkedin</a>
-                        <a rel="noopener noreferrer" target="_blank" href="https://github.com/tylerjtiede">github</a>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <button class="dropbtn">other stuff</button>
-                    <div class="dropdown-content">
-                        <a rel="noopener noreferrer" target="_blank" href="https://www.tylertiedediscgolf.com">my other website</a>
-                        <a rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/@TylerTiede">youtube channel</a>
-                        <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/tylertiede/">instagram</a>
-                        <a rel="noopener noreferrer" target="_blank" href="https://www.pdga.com/player/178379">pdga profile</a>
-                    </div>
-                </div>
-                
-            </div>
-
-
-            <div class="right-side">
-                <div class="brand">
-                    <div>Tyler Tiede</div>
+            <div class="dropdown">
+                <button class="dropbtn">resources</button>
+                <div class="dropdown-content">
+                    <a target="_blank" href="resume/resume-2025.pdf">resume</a>
+                    <a target="_blank" href="https://www.linkedin.com/in/tyler-tiede-628ba2168/">linkedin</a>
+                    <a target="_blank" href="https://github.com/tylerjtiede">github</a>
                 </div>
             </div>
-        </div>
 
-        <hr style="width:100%";color:white>
+            <div class="dropdown">
+                <button class="dropbtn">other stuff</button>
+                <div class="dropdown-content">
+                    <a target="_blank" href="https://www.tylertiedediscgolf.com">my other website</a>
+                    <a target="_blank" href="https://www.youtube.com/@TylerTiede">youtube channel</a>
+                    <a target="_blank" href="https://www.instagram.com/tylertiede/">instagram</a>
+                    <a target="_blank" href="https://www.pdga.com/player/178379">pdga profile</a>
+                </div>
+            </div>
+        </nav>
 
-        <div class="about-section-header">
-            <b>About Me</b>
+        <div class="right-side">
+            <div class="brand">Tyler Tiede</div>
         </div>
-            <div class="text">
-                I am a software engineer with 3 years of experience.
-                <br>
-                I also have a youtube channel and play professional disc golf.
-                <br>
+    </header>
+
+    <hr>
+
+    <main>
+        <section class="about-section">
+            <h2>About Me</h2>
+            <p>
+                I am a software engineer with 3 years of experience.<br>
+                I also have a youtube channel and play professional disc golf.<br>
                 Below are some projects I have worked on.
-            </div>
+            </p>
+        </section>
 
-        <div class="projects-wrapper">
-            <div class="projects-header-wrapper">
-                <b>Projects</b>
-            <br>
-            </div>
+        <section class="projects">
+            <h2>Projects</h2>
 
-            <div class="project-title">
-                LabVIEW Game
-            </div>
+            <article class="project">
+                <h3 class="project-title">LabVIEW Game</h3>
+                <div class="project-content">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/UtLs7RLfjmU" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>
+                    This is a project I worked on in 2019 in an undergraduate class using LabVIEW.<br>
+                    The video explains most of the details of the project.
+                </p>
+            </article>
 
-            <div class="project-content-wrapper">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/UtLs7RLfjmU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="text">
-                This is a project I worked on in 2019 in an undergraduate class using LabView.
-                <br>
-                The video explains most of the details of the project.
-            </div>
+            <article class="project">
+                <h3 class="project-title">Arduino Tea AutoBrewer</h3>
+                <div class="project-content">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/s3Ynh-EgRVM" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <p>
+                    This is a project I worked on in 2019 in an undergraduate class using an Arduino.<br>
+                    The video explains most of the details of the project.
+                </p>
+            </article>
 
-            <div class="project-title">
-                Arduino Tea AutoBrewer
-            </div>
+            <article class="project">
+                <h3 class="project-title">Arduino/Raspberry Pi Weather Station</h3>
+                <p>
+                    This is a project I worked on in 2020–2021 during undergrad.<br>
+                    I'll give a brief description of the project here:<br><br>
 
-            <div class="project-content-wrapper">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/s3Ynh-EgRVM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div class="text">
-                This is a project I worked on in 2019 in an undergraduate class using an Arduino.
-                <br>
-                The video explains most of the details of the project.
-            </div>
+                    I bought <a target="_blank" href="https://www.sparkfun.com/products/15901">weather sensors</a> from SparkFun,
+                    along with its accompanying <a target="_blank" href="https://www.sparkfun.com/products/13956">weather shield</a>.
+                    I connected these to an Arduino and ran some code which collected data and spit it out in the serial monitor periodically.
+                    I had the Arduino connected and being powered by a Raspberry Pi.<br><br>
 
-            <div class="project-title">
-                Arduino/Raspberry Pi Weather Station
-            </div>
+                    On the Pi, I wrote a Python script that would take the data coming out of the serial monitor and write it to a text file.
+                    Then, using a program called <a target="_blank" href="https://weewx.com/">WeeWX</a> to collect the data.
+                    I used a method in WeeWX called "fileparse" which basically takes the data from the text file and sends it to a server.
+                    This data is then presented on a local site using WeeWX's default interface using Apache.<br><br>
 
-            <div class="text">
-                This is a project I worked on in 2020-2021 during undergrad.
-                <br>
-                I'll give a brief description of the project here:
-                <br>
-                I bought <a target="_blank" href="https://www.sparkfun.com/products/15901">weather sensors</a> from sparkfun,
-                along with its accompanying <a target="_blank" href="https://www.sparkfun.com/products/13956">weather sheild</a>.
-                I connnected these to an arduino and ran some code which collected data and spit it out in the serial monitor periodically.
-                I had the arduino connected and being powered by a raspberry pi.
-                On the pi, I wrote a python script that would take the data coming out of the serial monitor and write it to a text file.
-                Then, using a program called <a target="_blank" href="https://weewx.com/">WeeWX</a> to collect the data.
-                I used a method in WeeWX called "fileparse" which basically takes the data from the text file and sends it to a server.
-                This data is then presented on a local site using WeeWX's default interface using apache.
-                <br>
-                I had more plans for the project but this is where I left off since I graduated and could no longer work on it.
-                Later plans included adding support to the station so it would last in more severe weather conditions,
-                connecting it to a battery, solar panel, and possibly some other software improvements to get more data or improve the interface.
-            </div>
+                    I had more plans for the project but this is where I left off since I graduated and could no longer work on it.
+                    Later plans included adding support to the station so it would last in more severe weather conditions,
+                    connecting it to a battery, solar panel, and possibly some other software improvements to get more data or improve the interface.
+                </p>
+            </article>
 
-            <div class="project-title">
-                Twitter Bot
-            </div>
+            <article class="project">
+                <h3 class="project-title">Twitter Bot</h3>
+                <div class="project-content">
+                    <img src="images/twitterbotpage2.png" alt="Screenshot of Twitter Bot Page">
+                </div>
+                <p>
+                    This is a Twitter bot that posts images every hour from the subreddit 
+                    <a target="_blank" href="https://old.reddit.com/r/Ooer/">/r/ooer</a>.<br>
+                    Most of the posts are complete nonsense; I just wanted to learn how to make a bot in Python using the Twitter and Reddit API.<br>
+                    <a target="_blank" href="https://twitter.com/ooerbotplease">Here's</a> the link to the actual Twitter bot page.
+                </p>
+            </article>
+        </section>
+    </main>
 
-            <div class="project-content-wrapper">
-                <img src="images\twitterbotpage2.png">
-            </div>
-            <div class="text">
-                This is a twitter bot that posts images every hour from the subreddit <a target="_blank" href="https://old.reddit.com/r/Ooer/">/r/ooer</a>.
-                <br>
-                Most of the posts are complete nonsense; I just wanted to learn how to make a bot in python using twitter and reddit api.
-                <br>
-                <a target="_blank" href="https://twitter.com/ooerbotplease">Here's</a> the link to the actual twitter bot page.
-            </div>
-
-
-            
-
-
-        </div>
-
-
-
-    </div>
+    <footer>
+        <p>© 2025 Tyler Tiede • Built with HTML & CSS</p>
+    </footer>
 </body>
 </html>

@@ -1,162 +1,170 @@
-/* Master Styles */
+:root {
+    --bg: #1E1E2F;
+    --text: #E0E6F0;
+    --highlight: #64D2FF;
+    --hover: #2A2F4A;
+    --dropdown: #2C2F3C;
+    --card: #262C3A;
+    --footer: #1A1A28;
+}
+
 body {
-    font-family: 'Zen Kaku Gothic Antique', sans-serif; 
-    margin: 0px;
-    background-color: #383838;
-}
-
-.container {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-/* nav styles */
-
-.left-side  {
-    margin-left: 20vw;
-    display: flex;
-}
-
-.right-side {
-    margin-right: 20vw;
-    display: flex;
-}
-
-.nav-wrapper > .right-side > div {
-    font-size: 1.5em;
-    text-align: center;
-}
-
-.nav-wrapper > .left-side > div {
-    margin-right: 20px;
-    font-size: 1.1em;
-}
-
-.navbar {
-    justify-content: space-between;
-    display: flex;
-    overflow: hidden;
-    background-color: #383838;
-}
-
-.navbar a {
-    float: left;
-    font-size: 1em;
-    color: #c5c5c5;
-    text-align: center;
-    padding: 10px 14px;
-    text-decoration: none;
-}
-
-.brand {
-    color: #c5c5c5;
-    padding-top: 10px;
-}
-
-/* dropdown */
-
-.dropdown {
-    float: left;
-    overflow: hidden;
-}
-
-.dropdown .dropbtn {
-    cursor: pointer;
-    font-size: 1em;
-    border: none;
-    outline: none;
-    color: #c5c5c5;
-    padding: 10px 14px;
-    background-color: inherit;
-    /* mobile stuff vv */
-    font-family: inherit; 
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
     margin: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: #505050;
+a {
+    color: var(--highlight);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 5px var(--highlight);
+}
+
+hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #444;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg);
+    padding: 1em 5vw;
+    flex-wrap: wrap;
+}
+
+.left-side,
+.right-side {
+    display: flex;
+    align-items: center;
+    gap: 1.2em;
+}
+
+.navbar a,
+.dropbtn {
+    color: var(--text);
+    padding: 10px 14px;
+    font-size: 1em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: 6px;
+}
+
+.navbar a:hover,
+.dropbtn:hover {
+    background-color: var(--hover);
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #565656;
+    background-color: var(--dropdown);
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     z-index: 1;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: opacity 0.2s ease;
 }
 
 .dropdown-content a {
-    float: none;
-    color: #c5c5c5;
-    padding: 12px 16px;
-    text-decoration: none;
     display: block;
+    padding: 12px 16px;
+    color: var(--text);
     text-align: left;
+    transition: background-color 0.2s ease;
 }
 
-.dropdown-content a:hover{
-    background-color: #3b3b3b;
+.dropdown-content a:hover {
+    background-color: var(--hover);
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* portfolio styles */
-
-.about-section-header {
-    font-size: 1.6em;
-    margin-left: 22vw;
-    color: #c5c5c5;
-    margin-right: 40vw;
+/* Main Layout */
+main {
+    max-width: 900px;
+    margin: 2em auto;
+    padding: 0 1em;
 }
 
-.projects-header-wrapper {
-    font-size: 1.6em;
-    margin-left: 21vw;
-    padding: 1vw;
-    color: #c5c5c5;
-    margin-right: 40vw;
-    font-style: bold;
+.about-section h2,
+.projects h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
 }
 
-.project-content-wrapper {
-    margin-left: 22vw;
+.about-section p {
+    font-size: 1em;
+}
+
+/* Projects */
+.project {
+    background-color: var(--card);
+    margin: 2em 0;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
 .project-title {
-    margin-left: 21vw;
-    padding: 1vw;
-    color: #c5c5c5;
-    font-size: 1.1em;
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
 }
 
-.text {
-    font-size: .9em;
-    margin-left: 21vw;
-    padding: 1vw;
-    color: #c5c5c5;
-    margin-right: 40vw;
+.project-content {
+    margin-bottom: 1em;
 }
 
-.text > a {
-    color: aqua;
+.project-content img,
+.project-content iframe {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 5px;
 }
 
-.text > a:active {
-    color: blue;
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2em 1em;
+    background-color: var(--footer);
+    font-size: 0.9em;
+    margin-top: 4em;
 }
 
-/* ultimate frisbee page */
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.ultimate-wrapper {
-    margin-left: 22vw;
-}
+    .left-side,
+    .right-side {
+        flex-direction: column;
+        gap: 0.5em;
+    }
 
-.ultimate-title {
-    margin-left: 21vw;
-    padding: 1vw;
-    color: #c5c5c5;
-    font-size: 1.1em;
+    .project-content iframe {
+        height: 250px;
+    }
 }
