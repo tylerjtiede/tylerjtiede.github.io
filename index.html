@@ -65,7 +65,7 @@
                 <script>
                 function calculateRating() {
                 const pdga = document.getElementById('pdgaNumber').value;
-                fetch(`https://your-api-url.com/api/calculate?pdga=${pdga}`)
+                fetch(`https://tylerjtiede-github-io.onrender.com/api/calculate?pdga=${pdga}`)
                     .then(response => response.json())
                     .then(data => {
                     document.getElementById('result').textContent = JSON.stringify(data, null, 2);

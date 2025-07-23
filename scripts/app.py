@@ -18,3 +18,8 @@ def calculate():
         return jsonify(result)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
+# local debug
+# if __name__ == '__main__':
+#     app.run(debug=True)
