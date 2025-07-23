@@ -5,7 +5,7 @@ from rating_calculator import calculate_rating
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, origins=["https://tylertiede.github.io"])
+CORS(app, origins=["https://tylerjtiede.github.io"])
 
 @app.route('/api/calculate', methods=['GET'])
 def calculate():
