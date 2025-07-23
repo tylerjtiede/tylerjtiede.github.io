@@ -58,6 +58,24 @@
 
             <article class="project">
                 <h3 class="project-title">PDGA Rating Calculator</h3>
+
+                <input type="text" id="pdgaNumber" placeholder="Enter PDGA Number">
+                <button onclick="calculateRating()">Get Rating</button>
+                <pre id="result"></pre>
+                <script>
+                function calculateRating() {
+                const pdga = document.getElementById('pdgaNumber').value;
+                fetch(`https://your-api-url.com/api/calculate?pdga=${pdga}`)
+                    .then(response => response.json())
+                    .then(data => {
+                    document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+                    })
+                    .catch(error => {
+                    document.getElementById('result').textContent = 'Error: ' + error;
+                    });
+                }
+                </script>
+
                 <div class="project-content">
                     <img src="images/pdga scraper image.png" alt="Screenshot of Script CLI">
                 </div>
