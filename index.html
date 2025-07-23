@@ -61,6 +61,7 @@
 
                 <div class="rating-tool">
                     <input type="text" id="pdgaNumber" placeholder="Enter PDGA Number">
+                    <input type="text" id="whatif" placeholder="1000,1020,980">
                     <button onclick="calculateRating()">Get Rating</button>
                     <pre id="result"></pre>
                     <div id="spinner" class="spinner" style="display: none;"></div>
@@ -69,14 +70,18 @@
                 <script>
                     async function calculateRating() {
                         const pdga = document.getElementById('pdgaNumber').value;
+                        const whatif = document.getElementById('whatif').value;
                         const resultEl = document.getElementById('result');
                         const spinner = document.getElementById('spinner');
 
                         resultEl.textContent = '';
                         spinner.style.display = 'inline-block';
 
+                        const query = new URLSearchParams({ pdga });
+                        if (whatif) query.append("whatif", whatif);
+
                         try {
-                            const res = await fetch(`https://tylerjtiede-github-io.onrender.com/api/calculate?pdga=${pdga}`);
+                            const res = await fetch(`https://tylerjtiede-github-io.onrender.com/api/calculate?${query.toString()}`);
                             const data = await res.json();
 
                             spinner.style.display = 'none';
