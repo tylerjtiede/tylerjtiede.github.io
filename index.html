@@ -59,35 +59,43 @@
             <article class="project">
                 <h3 class="project-title">PDGA Rating Calculator</h3>
 
-                <input type="text" id="pdgaNumber" placeholder="Enter PDGA Number">
-                <button onclick="calculateRating()">Get Rating</button>
-                <pre id="result"></pre>
+                <div class="rating-tool">
+                    <input type="text" id="pdgaNumber" placeholder="Enter PDGA Number">
+                    <button onclick="calculateRating()">Get Rating</button>
+                    <pre id="result"></pre>
+                    <div id="spinner" class="spinner" style="display: none;"></div>
+                </div>
+
                 <script>
                     async function calculateRating() {
                         const pdga = document.getElementById('pdgaNumber').value;
                         const resultEl = document.getElementById('result');
-                        resultEl.textContent = 'Loading...';
+                        const spinner = document.getElementById('spinner');
+
+                        resultEl.textContent = '';
+                        spinner.style.display = 'inline-block';
 
                         try {
                             const res = await fetch(`https://tylerjtiede-github-io.onrender.com/api/calculate?pdga=${pdga}`);
                             const data = await res.json();
+
+                            spinner.style.display = 'none';
 
                             if (data.error) {
                                 resultEl.textContent = `Error: ${data.error}`;
                                 return;
                             }
 
-                            // Build formatted output
                             let output = '';
 
-                            if (data.outgoing_rounds && data.outgoing_rounds.length > 0) {
+                            if (data.outgoing_rounds?.length) {
                                 output += '\nRounds you are dropping:\n';
                                 data.outgoing_rounds.forEach(rd => {
                                     output += `${rd.name}, round ${rd.round}, rating: ${rd.rating}\n`;
                                 });
                             }
 
-                            if (data.incoming_rounds && data.incoming_rounds.length > 0) {
+                            if (data.incoming_rounds?.length) {
                                 output += '\nRounds you are adding:\n';
                                 data.incoming_rounds.forEach(rd => {
                                     output += `${rd.name}, round ${rd.round}, rating: ${rd.rating}\n`;
@@ -98,7 +106,7 @@
                                 output += `\nYour outlier cutoff: ${data.drop_below}\n`;
                             }
 
-                            if (data.outlier_rounds && data.outlier_rounds.length > 0) {
+                            if (data.outlier_rounds?.length) {
                                 output += '\nYour outlier rounds:\n';
                                 data.outlier_rounds.forEach(rd => {
                                     output += `${rd.name}, round ${rd.round}, rating: ${rd.rating}\n`;
@@ -108,8 +116,8 @@
                             }
 
                             resultEl.textContent = output.trim();
-
                         } catch (err) {
+                            spinner.style.display = 'none';
                             resultEl.textContent = 'Error: ' + err.message;
                         }
                     }
