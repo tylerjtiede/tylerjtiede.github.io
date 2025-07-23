@@ -60,11 +60,16 @@
                 <h3 class="project-title">PDGA Rating Calculator</h3>
 
                 <div class="rating-tool">
-                    <input type="text" id="pdgaNumber" placeholder="Enter PDGA Number">
+                    <label for="pdgaNumber" style="font-weight: bold;">PDGA Number:</label>
+                    <input type="text" id="pdgaNumber" placeholder="178379">
+
+                    <label for="whatif" style="font-weight: bold;">What If:</label>
                     <input type="text" id="whatif" placeholder="1000,1020,980">
+
                     <button onclick="calculateRating()">Get Rating</button>
-                    <pre id="result"></pre>
+
                     <div id="spinner" class="spinner" style="display: none;"></div>
+                    <pre id="result"></pre>
                 </div>
 
                 <script>

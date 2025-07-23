@@ -205,6 +205,11 @@ footer {
 }
 
 .rating-tool {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    width: 100%;
+    box-sizing: border-box;
     background-color: var(--card);
     padding: 1.5em;
     border-radius: 12px;
