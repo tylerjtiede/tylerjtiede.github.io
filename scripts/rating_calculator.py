@@ -323,10 +323,10 @@ def calculate_rating(pdga_number, whatif=None):
     #     print('You have no outlier rounds!')
 
     result = {}
-    result['new_rating'] = pdga_rating
+    result['pdga_rating'] = pdga_rating
     result['rating_change'] = rating_change
-    result['added_rounds'] = incoming_rounds
-    result['dropped_rounds'] = outgoing_rounds
-    result['outlier_cutoff'] = drop_below
+    result['incoming_rounds'] = incoming_rounds
+    result['outgoing_rounds'] = outgoing_rounds
+    result['drop_below'] = drop_below
 
     return result
