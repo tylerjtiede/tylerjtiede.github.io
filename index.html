@@ -71,7 +71,44 @@
                         try {
                             const res = await fetch(`https://tylerjtiede-github-io.onrender.com/api/calculate?pdga=${pdga}`);
                             const data = await res.json();
-                            resultEl.textContent = JSON.stringify(data, null, 2);
+
+                            if (data.error) {
+                                resultEl.textContent = `Error: ${data.error}`;
+                                return;
+                            }
+
+                            // Build formatted output
+                            let output = '';
+
+                            if (data.outgoing_rounds && data.outgoing_rounds.length > 0) {
+                                output += '\nRounds you are dropping:\n';
+                                data.outgoing_rounds.forEach(rd => {
+                                    output += `${rd.name}, round ${rd.round}, rating: ${rd.rating}\n`;
+                                });
+                            }
+
+                            if (data.incoming_rounds && data.incoming_rounds.length > 0) {
+                                output += '\nRounds you are adding:\n';
+                                data.incoming_rounds.forEach(rd => {
+                                    output += `${rd.name}, round ${rd.round}, rating: ${rd.rating}\n`;
+                                });
+                            }
+
+                            if (data.drop_below !== undefined) {
+                                output += `\nYour outlier cutoff: ${data.drop_below}\n`;
+                            }
+
+                            if (data.outlier_rounds && data.outlier_rounds.length > 0) {
+                                output += '\nYour outlier rounds:\n';
+                                data.outlier_rounds.forEach(rd => {
+                                    output += `${rd.name}, round ${rd.round}, rating: ${rd.rating}\n`;
+                                });
+                            } else {
+                                output += '\nYou have no outlier rounds!\n';
+                            }
+
+                            resultEl.textContent = output.trim();
+
                         } catch (err) {
                             resultEl.textContent = 'Error: ' + err.message;
                         }
