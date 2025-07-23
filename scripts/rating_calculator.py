@@ -289,12 +289,15 @@ def calculate_rating(pdga_number, whatif=None):
         pdga_rating = round(np.average(ratings_minus_dropped + doubled_rounds))
                             
     rating_change = pdga_rating - current_rating
-    print(f'New rating: {pdga_rating} ({rating_change:+})')
 
     outgoing_rounds = [t for t in tournaments if t['evaluated'] == 'Yes' and t['timestamp'] < last_date]
     incoming_rounds = sorted(new_tournaments, key=lambda x: (x.get("timestamp", 0), x.get("round", 0)))
 
     outlier_rounds = [r for r in used_rounds if r['rating'] < drop_below]
+
+    print(f'USER CHECKED PDGA NUMBER: {pdga_number}')
+
+    # print(f'New rating: {pdga_rating} ({rating_change:+})')
 
     # print(f'\nRounds you are dropping:')
     # for rd in outgoing_rounds:
@@ -328,5 +331,6 @@ def calculate_rating(pdga_number, whatif=None):
     result['incoming_rounds'] = incoming_rounds
     result['outgoing_rounds'] = outgoing_rounds
     result['drop_below'] = drop_below
+    result['outlier_rounds'] = outlier_rounds
 
     return result

@@ -88,6 +88,11 @@
 
                             let output = '';
 
+                            if (data.pdga_rating !== undefined && data.rating_change !== undefined) {
+                                const sign = data.rating_change >= 0 ? '+' : '';
+                                output += `New rating: ${data.pdga_rating} (${sign}${data.rating_change})\n`;
+                            }
+
                             if (data.outgoing_rounds?.length) {
                                 output += '\nRounds you are dropping:\n';
                                 data.outgoing_rounds.forEach(rd => {
