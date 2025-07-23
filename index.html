@@ -63,17 +63,19 @@
                 <button onclick="calculateRating()">Get Rating</button>
                 <pre id="result"></pre>
                 <script>
-                function calculateRating() {
-                const pdga = document.getElementById('pdgaNumber').value;
-                fetch(`https://tylerjtiede-github-io.onrender.com/api/calculate?pdga=${pdga}`)
-                    .then(response => response.json())
-                    .then(data => {
-                    document.getElementById('result').textContent = JSON.stringify(data, null, 2);
-                    })
-                    .catch(error => {
-                    document.getElementById('result').textContent = 'Error: ' + error;
-                    });
-                }
+                    async function calculateRating() {
+                        const pdga = document.getElementById('pdgaNumber').value;
+                        const resultEl = document.getElementById('result');
+                        resultEl.textContent = 'Loading...';
+
+                        try {
+                            const res = await fetch(`https://tylerjtiede-github-io.onrender.com/api/calculate?pdga=${pdga}`);
+                            const data = await res.json();
+                            resultEl.textContent = JSON.stringify(data, null, 2);
+                        } catch (err) {
+                            resultEl.textContent = 'Error: ' + err.message;
+                        }
+                    }
                 </script>
 
                 <div class="project-content">
