@@ -111,31 +111,42 @@ hr {
   cursor: pointer;
 }
 
-/* Mobile styles */
 @media screen and (max-width: 768px) {
   .navbar {
-    flex-direction: row;         /* Keep items in a row */
-    flex-wrap: nowrap;           /* Prevent wrapping to new line */
+    flex-direction: row;         /* Keep navbar horizontal */
+    flex-wrap: nowrap;           
     overflow-x: auto;            /* Enable horizontal scroll if needed */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
   }
 
-  .nav-links,
   .left-side,
   .right-side {
-    flex-direction: row;
-    gap: 0.8em;                  /* Reduce spacing for smaller screens */
+    flex-direction: row;         /* Force horizontal layout */
+    gap: 0.8em;
   }
 
   .navbar a,
   .dropbtn {
-    font-size: 0.9em;            /* Slightly smaller text */
+    font-size: 0.9em;
     padding: 8px 10px;
-    white-space: nowrap;         /* Prevent text from wrapping */
+    white-space: nowrap;         /* Prevent text wrapping */
+  }
+
+  /* Fix dropdown cutoff on mobile */
+  .dropdown {
+    position: static;            /* Don’t clip inside navbar */
+  }
+
+  .dropdown-content {
+    position: absolute;          /* Pop out over page */
+    top: 100%;                   /* Place directly below button */
+    left: 0;
+    right: auto;
+    z-index: 200;                /* Above navbar */
   }
 
   .project-content iframe {
-    height: 220px;               /* Already shrinks projects */
+    height: 220px;
   }
 }
 
