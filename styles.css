@@ -57,7 +57,7 @@ hr {
     border-top: 1px solid #444;
 }
 
-/* Navbar */
+/* Default desktop navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -68,8 +68,13 @@ hr {
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: var(--bg);
     border-bottom: 1px solid #2c2c2c;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
 }
 
 .left-side,
@@ -94,6 +99,36 @@ hr {
 .navbar a:hover,
 .dropbtn:hover {
     background-color: var(--hover);
+}
+
+/* Hamburger button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8em;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+    background-color: var(--bg);
+    padding: 1em 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
 }
 
 /* Dropdown */
