@@ -113,21 +113,29 @@ hr {
 
 /* Mobile styles */
 @media screen and (max-width: 768px) {
-  .menu-toggle {
-    display: block;
+  .navbar {
+    flex-direction: row;         /* Keep items in a row */
+    flex-wrap: nowrap;           /* Prevent wrapping to new line */
+    overflow-x: auto;            /* Enable horizontal scroll if needed */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 0.5em;
-    width: 100%;
-    background-color: var(--bg);
-    padding: 1em 0;
+  .nav-links,
+  .left-side,
+  .right-side {
+    flex-direction: row;
+    gap: 0.8em;                  /* Reduce spacing for smaller screens */
   }
 
-  .nav-links.active {
-    display: flex;
+  .navbar a,
+  .dropbtn {
+    font-size: 0.9em;            /* Slightly smaller text */
+    padding: 8px 10px;
+    white-space: nowrap;         /* Prevent text from wrapping */
+  }
+
+  .project-content iframe {
+    height: 220px;               /* Already shrinks projects */
   }
 }
 
