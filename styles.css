@@ -57,7 +57,7 @@ hr {
     border-top: 1px solid #444;
 }
 
-/* Default desktop navbar */
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -68,13 +68,8 @@ hr {
     position: sticky;
     top: 0;
     z-index: 100;
+    background-color: var(--bg);
     border-bottom: 1px solid #2c2c2c;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1.2em;
 }
 
 .left-side,
@@ -99,55 +94,6 @@ hr {
 .navbar a:hover,
 .dropbtn:hover {
     background-color: var(--hover);
-}
-
-/* Hamburger button */
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.8em;
-  color: var(--text);
-  cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: row;         /* Keep navbar horizontal */
-    flex-wrap: nowrap;           
-    overflow-x: auto;            /* Enable horizontal scroll if needed */
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .left-side,
-  .right-side {
-    flex-direction: row;         /* Force horizontal layout */
-    gap: 0.8em;
-  }
-
-  .navbar a,
-  .dropbtn {
-    font-size: 0.9em;
-    padding: 8px 10px;
-    white-space: nowrap;         /* Prevent text wrapping */
-  }
-
-  /* Fix dropdown cutoff on mobile */
-  .dropdown {
-    position: static;            /* Don’t clip inside navbar */
-  }
-
-  .dropdown-content {
-    position: absolute;          /* Pop out over page */
-    top: 100%;                   /* Place directly below button */
-    left: 0;
-    right: auto;
-    z-index: 200;                /* Above navbar */
-  }
-
-  .project-content iframe {
-    height: 220px;
-  }
 }
 
 /* Dropdown */
