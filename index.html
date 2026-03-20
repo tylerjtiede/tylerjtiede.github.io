@@ -4,246 +4,347 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tyler Tiede</title>
+    <title>Tyler Tiede — Software Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique&family=Space+Grotesk&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=1.0">
-    <link rel="icon" href="image/png" type="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
 </head>
 
 <body>
+
+    <!-- Grain overlay -->
+    <div class="grain"></div>
+
     <header class="navbar">
-        <nav class="left-side">
-            <a href="index.html">home</a>
-
+        <div class="nav-logo">
+            <span class="logo-tt">TT</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#about">about</a>
+            <a href="#projects">projects</a>
             <div class="dropdown">
-                <button class="dropbtn">resources</button>
+                <button class="dropbtn">links ↓</button>
                 <div class="dropdown-content">
-                    <a target="_blank" href="resume/resume-2026.pdf">resume</a>
-                    <a target="_blank" href="https://www.linkedin.com/in/tyler-t-628ba2168/">linkedin</a>
-                    <a target="_blank" href="https://github.com/tylerjtiede">github</a>
-                </div>
-            </div>
-
-            <div class="dropdown">
-                <button class="dropbtn">other stuff</button>
-                <div class="dropdown-content">
-                    <!-- <a target="_blank" href="https://www.tylertiedediscgolf.com">my other website</a> -->
-                    <a target="_blank" href="https://www.youtube.com/@TylerTiede">youtube channel</a>
-                    <a target="_blank" href="https://www.instagram.com/tylertiede/">instagram</a>
-                    <a target="_blank" href="https://www.pdga.com/player/178379">pdga profile</a>
+                    <a target="_blank" href="resume/resume-2026.pdf">↗ resume</a>
+                    <a target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">↗ linkedin</a>
+                    <a target="_blank" href="https://github.com/tylerjtiede">↗ github</a>
+                    <a target="_blank" href="https://www.youtube.com/@TylerTiede">↗ youtube</a>
+                    <a target="_blank" href="https://www.instagram.com/tylertiede/">↗ instagram</a>
+                    <a target="_blank" href="https://www.pdga.com/player/178379">↗ pdga</a>
                 </div>
             </div>
         </nav>
-
-        <div class="right-side">
-            <div class="brand">Tyler Tiede</div>
-        </div>
     </header>
 
     <main>
-        <section class="about-section">
-            <h2>About Me</h2>
-            <p>
-                I am a software engineer with 3 years of experience.<br>
-                I also have a youtube channel and play professional disc golf.<br>
-                Below are some projects I have worked on.
-            </p>
+
+        <!-- Hero -->
+        <section class="hero" id="about">
+            <div class="hero-eyebrow">Software Engineer · Rochester, NY</div>
+            <h1 class="hero-name">
+                Tyler<br>
+                <span class="italic">Tiede</span>
+            </h1>
+            <div class="hero-body">
+                <p>
+                    Backend engineer with 3+ years building test infrastructure, automation frameworks, and hardware-software integration systems. Applied Physics background. I write clean Python, think in systems, and care about things that actually work.
+                </p>
+                <p class="hero-sub">
+                    Also: disc golfer, content creator, cat person.
+                </p>
+            </div>
+            <div class="hero-links">
+                <a class="btn-primary" href="resume/resume-2026.pdf" target="_blank">View Resume ↗</a>
+                <a class="btn-ghost" href="mailto:tylertiede@gmail.com">tylertiede@gmail.com</a>
+            </div>
         </section>
 
-        <section class="projects">
-            <h2>Projects</h2>
+        <!-- Skills strip -->
+        <div class="skills-strip">
+            <div class="skills-track">
+                <span>Python</span><span class="dot">·</span>
+                <span>PyTest</span><span class="dot">·</span>
+                <span>NumPy</span><span class="dot">·</span>
+                <span>Flask</span><span class="dot">·</span>
+                <span>BeautifulSoup</span><span class="dot">·</span>
+                <span>Jenkins</span><span class="dot">·</span>
+                <span>Docker</span><span class="dot">·</span>
+                <span>Git</span><span class="dot">·</span>
+                <span>Linux</span><span class="dot">·</span>
+                <span>I²C / Serial</span><span class="dot">·</span>
+                <span>C++</span><span class="dot">·</span>
+                <span>LabVIEW</span><span class="dot">·</span>
+                <span>Regression Testing</span><span class="dot">·</span>
+                <span>MySQL</span><span class="dot">·</span>
+                <!-- repeated for seamless scroll -->
+                <span>Python</span><span class="dot">·</span>
+                <span>PyTest</span><span class="dot">·</span>
+                <span>NumPy</span><span class="dot">·</span>
+                <span>Flask</span><span class="dot">·</span>
+                <span>BeautifulSoup</span><span class="dot">·</span>
+                <span>Jenkins</span><span class="dot">·</span>
+                <span>Docker</span><span class="dot">·</span>
+                <span>Git</span><span class="dot">·</span>
+                <span>Linux</span><span class="dot">·</span>
+                <span>I²C / Serial</span><span class="dot">·</span>
+                <span>C++</span><span class="dot">·</span>
+                <span>LabVIEW</span><span class="dot">·</span>
+                <span>Regression Testing</span><span class="dot">·</span>
+                <span>MySQL</span><span class="dot">·</span>
+            </div>
+        </div>
 
-            <article class="project">
-                <h3 class="project-title">PDGA Rating Calculator</h3>
+        <!-- Experience -->
+        <section class="section" id="experience">
+            <div class="section-label">Experience</div>
+            <div class="experience-list">
+
+                <div class="exp-item">
+                    <div class="exp-meta">
+                        <span class="exp-company">MKS Instruments</span>
+                        <span class="exp-period">Jan 2022 – Nov 2024</span>
+                    </div>
+                    <div class="exp-role">Software Engineer · Rochester, NY</div>
+                    <ul class="exp-bullets">
+                        <li>Designed and maintained Python-based regression test suites for RF plasma control systems used by major semiconductor fabs.</li>
+                        <li>Built an end-to-end test platform simulating RF generator firmware behavior and validating I²C communication with control boards.</li>
+                        <li>Automated data parsing and report workflows, freeing developer time from manual analysis.</li>
+                        <li>Integrated serial comms with lab instruments (oscilloscopes, function generators) to enable autonomous testing workflows.</li>
+                        <li>Diagnosed CI test bugs, improving reliability and reducing engineering support hours.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-meta">
+                        <span class="exp-company">Corning, Inc.</span>
+                        <span class="exp-period">Aug – Dec 2021</span>
+                    </div>
+                    <div class="exp-role">Optics Technician · Fairport, NY</div>
+                    <ul class="exp-bullets">
+                        <li>Assembled customer-bound opto-mechanical systems to quality and performance standards.</li>
+                        <li>Collaborated with design engineers to reduce failure rates and improve throughput.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-meta">
+                        <span class="exp-company">SUNY Geneseo</span>
+                        <span class="exp-period">Jun 2018 – Mar 2020</span>
+                    </div>
+                    <div class="exp-role">Assistant System Administrator</div>
+                    <ul class="exp-bullets">
+                        <li>Managed card access for 6,000+ users across all campus buildings.</li>
+                        <li>Helped develop web apps including a campus emergency alert system using PHP, Laravel, Bootstrap, and MySQL.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section" id="projects">
+            <div class="section-label">Projects</div>
+
+            <!-- PDGA Rating Calculator — featured -->
+            <article class="project project--featured">
+                <div class="project-header">
+                    <div>
+                        <div class="project-tag">Python · Flask · BeautifulSoup · NumPy</div>
+                        <h3 class="project-title">PDGA Rating Calculator</h3>
+                        <p class="project-desc">
+                            Scrapes a player's PDGA profile to predict their official rating before the next update — no manual round entry required. Detects "Now Playing" and "Recent Events" pages, computes outlier cutoffs, and surfaces rounds being added or dropped. Exposed as a REST API via Flask; deployed on Render.
+                        </p>
+                        <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/pdga-rating-calculator">GitHub ↗</a>
+                    </div>
+                </div>
 
                 <div class="rating-tool">
-                    <label for="pdgaNumber" style="font-weight: bold;">PDGA Number:</label>
-                    <input type="text" id="pdgaNumber" placeholder="178379">
-
-                    <label for="whatif" style="font-weight: bold;">What If:</label>
-                    <input type="text" id="whatif" placeholder="1000,1020,980">
-
-                    <button onclick="calculateRating()">Get Rating</button>
+                    <div class="rating-tool-row">
+                        <div class="input-group">
+                            <label for="pdgaNumber">PDGA Number</label>
+                            <input type="text" id="pdgaNumber" placeholder="178379">
+                        </div>
+                        <div class="input-group">
+                            <label for="whatif">What-If Rounds <span class="label-hint">(comma-separated ratings)</span></label>
+                            <input type="text" id="whatif" placeholder="1000, 1020, 980">
+                        </div>
+                        <button onclick="calculateRating()">Calculate →</button>
+                    </div>
 
                     <div id="spinner" class="spinner" style="display: none;"></div>
-                    <pre id="result"></pre>
+
+                    <div id="result-container" style="display:none;">
+                        <div id="rating-display" class="rating-display"></div>
+                        <div class="rounds-grid">
+                            <div id="incoming-col" class="rounds-col"></div>
+                            <div id="outgoing-col" class="rounds-col"></div>
+                            <div id="outlier-col" class="rounds-col"></div>
+                        </div>
+                    </div>
+                    <pre id="result-error" style="display:none;"></pre>
                 </div>
 
                 <script>
                     async function calculateRating() {
                         const pdga = document.getElementById('pdgaNumber').value;
                         const whatif = document.getElementById('whatif').value;
-                        const resultEl = document.getElementById('result');
                         const spinner = document.getElementById('spinner');
+                        const container = document.getElementById('result-container');
+                        const errorEl = document.getElementById('result-error');
 
-                        resultEl.textContent = '';
-                        spinner.style.display = 'inline-block';
+                        container.style.display = 'none';
+                        errorEl.style.display = 'none';
+                        spinner.style.display = 'flex';
 
                         const query = new URLSearchParams({ pdga });
-                        if (whatif) query.append("whatif", whatif);
+                        if (whatif) query.append("whatif", whatif.replace(/\s/g, ''));
 
                         try {
                             const res = await fetch(`https://tylerjtiede-github-io.onrender.com/api/calculate?${query.toString()}`);
                             const data = await res.json();
-
                             spinner.style.display = 'none';
 
                             if (data.error) {
-                                resultEl.textContent = `Error: ${data.error}`;
+                                errorEl.textContent = `Error: ${data.error}`;
+                                errorEl.style.display = 'block';
                                 return;
                             }
 
-                            let output = '';
+                            // Rating display
+                            const ratingDisplay = document.getElementById('rating-display');
+                            const sign = data.rating_change >= 0 ? '+' : '';
+                            const changeClass = data.rating_change >= 0 ? 'positive' : 'negative';
+                            ratingDisplay.innerHTML = `
+                                <div class="rating-number">${data.pdga_rating}</div>
+                                <div class="rating-change ${changeClass}">${sign}${data.rating_change}</div>
+                                <div class="rating-cutoff">Outlier cutoff: <strong>${data.drop_below}</strong></div>
+                            `;
 
-                            if (data.pdga_rating !== undefined && data.rating_change !== undefined) {
-                                const sign = data.rating_change >= 0 ? '+' : '';
-                                output += `New rating: ${data.pdga_rating} (${sign}${data.rating_change})\n`;
-                            }
-
-                            if (data.outgoing_rounds?.length) {
-                                output += '\nRounds you are dropping:\n';
-                                data.outgoing_rounds.forEach(rd => {
-                                    output += `${rd.name}, round ${rd.round}, rating: ${rd.rating}\n`;
-                                });
-                            }
-
+                            // Incoming
+                            const incomingCol = document.getElementById('incoming-col');
                             if (data.incoming_rounds?.length) {
-                                output += '\nRounds you are adding:\n';
-                                data.incoming_rounds.forEach(rd => {
-                                    output += `${rd.name}, round ${rd.round}, rating: ${rd.rating}\n`;
-                                });
+                                incomingCol.innerHTML = `<div class="rounds-col-title">Adding</div>` +
+                                    data.incoming_rounds.map(rd => `<div class="round-row"><span class="round-name">${rd.name} R${rd.round}</span><span class="round-rating">${rd.rating}</span></div>`).join('');
                             }
 
-                            if (data.drop_below !== undefined) {
-                                output += `\nYour outlier cutoff: ${data.drop_below}\n`;
+                            // Outgoing
+                            const outgoingCol = document.getElementById('outgoing-col');
+                            if (data.outgoing_rounds?.length) {
+                                outgoingCol.innerHTML = `<div class="rounds-col-title">Dropping</div>` +
+                                    data.outgoing_rounds.map(rd => `<div class="round-row"><span class="round-name">${rd.name} R${rd.round}</span><span class="round-rating">${rd.rating}</span></div>`).join('');
                             }
 
+                            // Outliers
+                            const outlierCol = document.getElementById('outlier-col');
                             if (data.outlier_rounds?.length) {
-                                output += '\nYour outlier rounds:\n';
-                                data.outlier_rounds.forEach(rd => {
-                                    output += `${rd.name}, round ${rd.round}, rating: ${rd.rating}\n`;
-                                });
+                                outlierCol.innerHTML = `<div class="rounds-col-title">Outliers</div>` +
+                                    data.outlier_rounds.map(rd => `<div class="round-row"><span class="round-name">${rd.name} R${rd.round}</span><span class="round-rating outlier">${rd.rating}</span></div>`).join('');
                             } else {
-                                output += '\nYou have no outlier rounds!\n';
+                                outlierCol.innerHTML = `<div class="rounds-col-title">Outliers</div><div class="no-outliers">No outlier rounds ✓</div>`;
                             }
 
-                            resultEl.textContent = output.trim();
+                            container.style.display = 'block';
+                            container.classList.add('fade-in');
+
                         } catch (err) {
                             spinner.style.display = 'none';
-                            resultEl.textContent = 'Error: ' + err.message;
+                            errorEl.textContent = 'Error: ' + err.message;
+                            errorEl.style.display = 'block';
                         }
                     }
                 </script>
-
-                <div class="project-content">
-                    <img src="images/pdga scraper image.png" alt="Screenshot of Script CLI">
-                </div>
-                <p>
-                    This is a script that collects data from a user's 
-                    <a target="_blank" href="https://www.pdga.com/player/178379">pdga profile</a> and uses the data to predict their rating at the next ratings update.
-                    Many people, including myself, have made spreadsheets to track this, or even browser extensions, but they all required manually entering in new rounds.
-                    This script checks things like "Now Playing", "Recent Events", or discrepancies between the player statistics page and ratings detail page to determine your next rating without manually entering any rounds.
-                    As long as you have played a tournament, and the rating is accessible on the webpage, it will automatically use it to calculate your next rating change.
-                    Additionally, it will show you which rounds you are adding and dropping at the next update.
-                    Feel free to test it out by entering any pdga number in the box above!<br><br>
-                    <a target="_blank" href="https://github.com/tylerjtiede/pdga-rating-calculator">GitHub Page</a>
-                </p>
             </article>
 
-            <article class="project">
-                <h3 class="project-title">Django Blog</h3>
-                <div class="project-content">
-                    <img src="images/django.png" alt="Django Logo">
-                </div>
-                <p>
-                    I am currently working on building a simple blog using Django.<br>
-                    It is a work in progress so there isn't much to see, but feel free to check out the GitHub page below.<br><br>
-                    <a target="_blank" href="https://github.com/tylerjtiede/blog">GitHub Page</a>
-                </p>
-            </article>
+            <!-- Grid of smaller projects -->
+            <div class="projects-grid">
 
-            <article class="project">
-                <h3 class="project-title">LabVIEW Game</h3>
-                <div class="project-content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/UtLs7RLfjmU" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <p>
-                    This is a project I worked on in 2019 in an undergraduate class using LabVIEW.<br>
-                    The video explains most of the details of the project.<br><br>
-                    <a target="_blank" href="https://github.com/tylerjtiede/labviewFinal">GitHub Page</a>
-                </p>
-            </article>
+                <article class="project project--card">
+                    <div class="project-tag">Python · Django</div>
+                    <h3 class="project-title">Django Blog</h3>
+                    <p class="project-desc">A personal blog built with Django. Work in progress — exploring full-stack Django patterns with a clean reading experience in mind.</p>
+                    <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/blog">GitHub ↗</a>
+                </article>
 
-            <article class="project">
-                <h3 class="project-title">Arduino Tea AutoBrewer</h3>
-                <div class="project-content">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/s3Ynh-EgRVM" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <p>
-                    This is a project I worked on in 2019 in an undergraduate class using an Arduino.<br>
-                    The video explains most of the details of the project.<br><br>
-                    <a target="_blank" href="https://github.com/tylerjtiede/tea-brewer">GitHub Page</a>
-                </p>
-            </article>
+                <article class="project project--card">
+                    <div class="project-tag">Python · Twitter API · Reddit API</div>
+                    <h3 class="project-title">Twitter Bot</h3>
+                    <p class="project-desc">Automated bot that posts images hourly from r/Ooer using the Twitter and Reddit APIs. Built to learn API authentication and scheduled posting patterns.</p>
+                    <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/ooerbot">GitHub ↗</a>
+                </article>
 
-            <article class="project">
-                <h3 class="project-title">Arduino/Raspberry Pi Weather Station</h3>
-                <p>
-                    This is a project I worked on in 2020–2021 during undergrad.<br>
-                    I'll give a brief description of the project here:<br><br>
+                <article class="project project--card">
+                    <div class="project-tag">Python</div>
+                    <h3 class="project-title">Wordle Solver</h3>
+                    <p class="project-desc">CLI tool for narrowing down Wordle solutions. Input your guesses and letter feedback — it returns a filtered list of remaining valid words.</p>
+                    <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/wordle-script">GitHub ↗</a>
+                </article>
 
-                    I bought <a target="_blank" href="https://www.sparkfun.com/products/15901">weather sensors</a> from SparkFun,
-                    along with its accompanying <a target="_blank" href="https://www.sparkfun.com/products/13956">weather shield</a>.
-                    I connected these to an Arduino and ran some code which collected data and spit it out in the serial monitor periodically.
-                    I had the Arduino connected and being powered by a Raspberry Pi.<br><br>
+                <article class="project project--card">
+                    <div class="project-tag">Arduino · Python · Raspberry Pi</div>
+                    <h3 class="project-title">Weather Station</h3>
+                    <p class="project-desc">SparkFun weather sensors → Arduino → Raspberry Pi → WeeWX → local Apache dashboard. End-to-end hardware-software pipeline built during undergrad.</p>
+                    <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/weather-station">GitHub ↗</a>
+                </article>
 
-                    On the Pi, I wrote a Python script that would take the data coming out of the serial monitor and write it to a text file.
-                    Then, using a program called <a target="_blank" href="https://weewx.com/">WeeWX</a> to collect the data.
-                    I used a method in WeeWX called "fileparse" which basically takes the data from the text file and sends it to a server.
-                    This data is then presented on a local site using WeeWX's default interface using Apache.<br><br>
+                <article class="project project--card has-video">
+                    <div class="project-tag">LabVIEW</div>
+                    <h3 class="project-title">LabVIEW Game</h3>
+                    <p class="project-desc">Undergrad project: a fully interactive game built in LabVIEW. Demonstrates dataflow programming, event handling, and real-time state management.</p>
+                    <a class="project-link" target="_blank" href="https://www.youtube.com/embed/UtLs7RLfjmU">Watch Demo ↗</a>
+                </article>
 
-                    I had more plans for the project but this is where I left off since I graduated and could no longer work on it.
-                    Later plans included adding support to the station so it would last in more severe weather conditions,
-                    connecting it to a battery, solar panel, and possibly some other software improvements to get more data or improve the interface.<br><br>
-                    <a target="_blank" href="https://github.com/tylerjtiede/weather-station">GitHub Page</a>
-                </p>
-            </article>
+                <article class="project project--card has-video">
+                    <div class="project-tag">Arduino · Embedded C</div>
+                    <h3 class="project-title">Tea AutoBrewer</h3>
+                    <p class="project-desc">Arduino-powered automated tea brewer with timed steeping sequences. Servo control, timing logic, and a satisfying real-world demo.</p>
+                    <a class="project-link" target="_blank" href="https://www.youtube.com/embed/s3Ynh-EgRVM">Watch Demo ↗</a>
+                </article>
 
-            <article class="project">
-                <h3 class="project-title">Wordle Solver</h3>
-                <div class="project-content">
-                    <img src="images/wordle-script-image.png" alt="Screenshot of Script CLI">
-                </div>
-                <p>
-                    This is a script I made for fun. It's for finding solutions to the game
-                    <a target="_blank" href="https://www.nytimes.com/games/wordle/index.html">wordle</a>.<br>
-                    You input your guess, then what the color of each letter returnd in the game was, then it will tell you a list of possible solutions.<br>
-                    It's not very robust or exciting, but it was cool to see it work.<br><br>
-                    <a target="_blank" href="https://github.com/tylerjtiede/wordle-script">GitHub Page</a>
-                </p>
-            </article>
-
-            <article class="project">
-                <h3 class="project-title">Twitter Bot</h3>
-                <div class="project-content">
-                    <img src="images/twitterbotpage2.png" alt="Screenshot of Twitter Bot Page">
-                </div>
-                <p>
-                    This is a Twitter bot that posts images every hour from the subreddit 
-                    <a target="_blank" href="https://old.reddit.com/r/Ooer/">/r/ooer</a>.<br>
-                    Most of the posts are complete nonsense; I just wanted to learn how to make a bot in Python using the Twitter and Reddit API.<br>
-                    <a target="_blank" href="https://twitter.com/ooerbotplease">Here's</a> the link to the actual Twitter bot page.<br><br>
-                    <a target="_blank" href="https://github.com/tylerjtiede/ooerbot">GitHub Page</a>
-                </p>
-            </article>
+            </div>
         </section>
+
+        <!-- Education -->
+        <section class="section section--edu">
+            <div class="section-label">Education</div>
+            <div class="edu-block">
+                <div class="edu-degree">B.S. Applied Physics</div>
+                <div class="edu-school">SUNY Geneseo</div>
+                <div class="edu-detail">Minor in Mathematics · May 2021</div>
+            </div>
+        </section>
+
     </main>
 
     <footer>
-        <p>© 2025 Tyler Tiede • Built with HTML & CSS</p>
+        <div class="footer-inner">
+            <span>Tyler Tiede · Software Engineer</span>
+            <span class="footer-links">
+                <a target="_blank" href="https://github.com/tylerjtiede">GitHub</a>
+                <a target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">LinkedIn</a>
+                <a target="_blank" href="https://www.pdga.com/player/178379">PDGA</a>
+            </span>
+            <span>© 2026</span>
+        </div>
     </footer>
+
+    <script>
+        // Staggered fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.08 });
+
+        document.querySelectorAll('.section, .project, .exp-item, .skills-strip').forEach(el => {
+            el.classList.add('reveal');
+            observer.observe(el);
+        });
+    </script>
+
 </body>
 </html>
