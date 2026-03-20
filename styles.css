@@ -196,6 +196,9 @@ main {
     position: relative;
 }
 
+
+
+
 /* Subtle rule on the left */
 .hero::before {
     content: '';
