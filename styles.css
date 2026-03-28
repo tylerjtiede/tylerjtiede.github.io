@@ -421,6 +421,34 @@ main {
     box-shadow: 0 0 40px rgba(200, 169, 110, 0.06);
 }
 
+.project-work-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    border: 1px solid rgba(110, 142, 200, 0.3);
+    border-radius: 4px;
+    padding: 0.2em 0.55em;
+    margin-bottom: 0.4em;
+}
+
+.project-work-badge--wip {
+    color: var(--accent);
+    border-color: rgba(200, 169, 110, 0.3);
+}
+
+.project-desc code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    color: var(--accent);
+    background: rgba(200, 169, 110, 0.08);
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+}
+
+
 .project-tag {
     font-family: var(--font-mono);
     font-size: 0.7rem;
