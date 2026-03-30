@@ -15,12 +15,11 @@
 
 <body>
 
-    <!-- Grain overlay -->
     <div class="grain"></div>
 
     <header class="navbar">
         <div class="nav-logo">
-            <span class="logo-tt">TT</span>
+            <span class="logo-tt">T</span>
         </div>
         <nav class="nav-links">
             <a href="#about">about</a>
@@ -50,15 +49,15 @@
             </h1>
             <div class="hero-body">
                 <p>
-                    Backend engineer with 3+ years building test infrastructure, automation frameworks, and hardware-software integration systems. Applied Physics background. I write clean Python, think in systems, and care about things that actually work.
+                    Backend engineer with 3+ years building test infrastructure, automation frameworks, and hardware-software integration systems. My Applied Physics background means I'm as comfortable reading a datasheet as I am writing a test suite — and I care deeply about software that actually works in the real world.
                 </p>
                 <p class="hero-sub">
-                    Also: disc golfer, content creator, cat person.
+                    Currently building <a href="https://github.com/tylerjtiede/blamelog" target="_blank">blamelog</a>, a Python developer tooling library. Also: disc golfer, content creator, cat person.
                 </p>
             </div>
             <div class="hero-links">
-                <a class="btn-primary" href="resume/resume-2026.pdf" target="_blank">View Resume ↗</a>
-                <a class="btn-ghost" href="mailto:tylertiede@gmail.com">tylertiede@gmail.com</a>
+                <a class="btn-primary" href="mailto:tylertiede@gmail.com">Get in Touch ↗</a>
+                <a class="btn-ghost" href="resume/resume-2026.pdf" target="_blank">View Resume</a>
             </div>
         </section>
 
@@ -66,36 +65,210 @@
         <div class="skills-strip">
             <div class="skills-track">
                 <span>Python</span><span class="dot">·</span>
+                <span>Flask</span><span class="dot">·</span>
                 <span>PyTest</span><span class="dot">·</span>
                 <span>NumPy</span><span class="dot">·</span>
-                <span>Flask</span><span class="dot">·</span>
-                <span>BeautifulSoup</span><span class="dot">·</span>
-                <span>Jenkins</span><span class="dot">·</span>
-                <span>Docker</span><span class="dot">·</span>
-                <span>Git</span><span class="dot">·</span>
-                <span>Linux</span><span class="dot">·</span>
-                <span>I²C / Serial</span><span class="dot">·</span>
-                <span>C++</span><span class="dot">·</span>
-                <span>LabVIEW</span><span class="dot">·</span>
-                <span>Regression Testing</span><span class="dot">·</span>
+                <span>Pandas</span><span class="dot">·</span>
+                <span>SciPy</span><span class="dot">·</span>
+                <span>Matplotlib</span><span class="dot">·</span>
+                <span>REST APIs</span><span class="dot">·</span>
+                <span>Web Scraping</span><span class="dot">·</span>
                 <span>MySQL</span><span class="dot">·</span>
-                <!-- repeated for seamless scroll -->
+                <span>Git</span><span class="dot">·</span>
+                <span>Docker</span><span class="dot">·</span>
+                <span>Jenkins</span><span class="dot">·</span>
+                <span>Linux</span><span class="dot">·</span>
+                <span>PyQt5</span><span class="dot">·</span>
+                <span>Arduino</span><span class="dot">·</span>
+                <span>Raspberry Pi</span><span class="dot">·</span>
                 <span>Python</span><span class="dot">·</span>
+                <span>Flask</span><span class="dot">·</span>
                 <span>PyTest</span><span class="dot">·</span>
                 <span>NumPy</span><span class="dot">·</span>
-                <span>Flask</span><span class="dot">·</span>
-                <span>BeautifulSoup</span><span class="dot">·</span>
-                <span>Jenkins</span><span class="dot">·</span>
-                <span>Docker</span><span class="dot">·</span>
-                <span>Git</span><span class="dot">·</span>
-                <span>Linux</span><span class="dot">·</span>
-                <span>I²C / Serial</span><span class="dot">·</span>
-                <span>C++</span><span class="dot">·</span>
-                <span>LabVIEW</span><span class="dot">·</span>
-                <span>Regression Testing</span><span class="dot">·</span>
+                <span>Pandas</span><span class="dot">·</span>
+                <span>SciPy</span><span class="dot">·</span>
+                <span>Matplotlib</span><span class="dot">·</span>
+                <span>REST APIs</span><span class="dot">·</span>
+                <span>Web Scraping</span><span class="dot">·</span>
                 <span>MySQL</span><span class="dot">·</span>
+                <span>Git</span><span class="dot">·</span>
+                <span>Docker</span><span class="dot">·</span>
+                <span>Jenkins</span><span class="dot">·</span>
+                <span>Linux</span><span class="dot">·</span>
+                <span>PyQt5</span><span class="dot">·</span>
+                <span>Arduino</span><span class="dot">·</span>
+                <span>Raspberry Pi</span><span class="dot">·</span>
             </div>
         </div>
+
+        <!-- Projects -->
+        <section class="section" id="projects">
+            <div class="section-label">Projects</div>
+
+            <!-- blamelog -->
+            <article class="project project--featured">
+                <div class="project-tag">Python · Open Source · Developer Tooling</div>
+                <div class="project-work-badge project-work-badge--wip">In Progress</div>
+                <h3 class="project-title">blamelog</h3>
+                <p class="project-desc">
+                    A Python library that hooks into the runtime exception system and annotates each stack frame with <code>git blame</code> data — surfacing the author, commit, and timestamp of the last change to every line in a traceback. Instead of just knowing <em>what</em> broke, you immediately know <em>who</em> last touched it and when. Drop-in install with no code changes required.
+                </p>
+                <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/blamelog">GitHub ↗</a>
+            </article>
+
+            <!-- PDGA Rating Calculator -->
+            <article class="project project--featured">
+                <div class="project-header">
+                    <div>
+                        <div class="project-tag">Python · Flask · BeautifulSoup · NumPy</div>
+                        <h3 class="project-title">PDGA Rating Calculator</h3>
+                        <p class="project-desc">
+                            Scrapes a player's PDGA profile to predict their official rating before the next update — no manual round entry required. Detects "Now Playing" and "Recent Events" pages, computes outlier cutoffs, and surfaces rounds being added or dropped. Exposed as a REST API via Flask; deployed on Render.
+                        </p>
+                        <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/pdga-rating-calculator">GitHub ↗</a>
+                    </div>
+                </div>
+
+                <div class="rating-tool">
+                    <div class="rating-tool-row">
+                        <div class="input-group">
+                            <label for="pdgaNumber">PDGA Number</label>
+                            <input type="text" id="pdgaNumber" placeholder="178379">
+                        </div>
+                        <div class="input-group">
+                            <label for="whatif">What-If Rounds <span class="label-hint">(comma-separated ratings)</span></label>
+                            <input type="text" id="whatif" placeholder="1000, 1020, 980">
+                        </div>
+                        <button onclick="calculateRating()">Calculate →</button>
+                    </div>
+                    <div id="spinner" class="spinner" style="display: none;"></div>
+                    <div id="result-container" style="display:none;">
+                        <div id="rating-display" class="rating-display"></div>
+                        <div class="rounds-grid">
+                            <div id="incoming-col" class="rounds-col"></div>
+                            <div id="outgoing-col" class="rounds-col"></div>
+                            <div id="outlier-col" class="rounds-col"></div>
+                        </div>
+                    </div>
+                    <pre id="result-error" style="display:none;"></pre>
+                </div>
+
+                <script>
+                    async function calculateRating() {
+                        const pdga = document.getElementById('pdgaNumber').value;
+                        const whatif = document.getElementById('whatif').value;
+                        const spinner = document.getElementById('spinner');
+                        const container = document.getElementById('result-container');
+                        const errorEl = document.getElementById('result-error');
+
+                        container.style.display = 'none';
+                        errorEl.style.display = 'none';
+                        spinner.style.display = 'flex';
+
+                        const query = new URLSearchParams({ pdga });
+                        if (whatif) query.append("whatif", whatif.replace(/\s/g, ''));
+
+                        try {
+                            const res = await fetch(`https://tylerjtiede-github-io.onrender.com/api/calculate?${query.toString()}`);
+                            const data = await res.json();
+                            spinner.style.display = 'none';
+
+                            if (data.error) {
+                                errorEl.textContent = `Error: ${data.error}`;
+                                errorEl.style.display = 'block';
+                                return;
+                            }
+
+                            const ratingDisplay = document.getElementById('rating-display');
+                            const sign = data.rating_change >= 0 ? '+' : '';
+                            const changeClass = data.rating_change >= 0 ? 'positive' : 'negative';
+                            ratingDisplay.innerHTML = `
+                                <div class="rating-number">${data.pdga_rating}</div>
+                                <div class="rating-change ${changeClass}">${sign}${data.rating_change}</div>
+                                <div class="rating-cutoff">Outlier cutoff: <strong>${data.drop_below}</strong></div>
+                            `;
+
+                            const incomingCol = document.getElementById('incoming-col');
+                            if (data.incoming_rounds?.length) {
+                                incomingCol.innerHTML = '<div class="rounds-col-title">Adding</div>' +
+                                    data.incoming_rounds.map(rd => `<div class="round-row"><span class="round-name">${rd.name} R${rd.round}</span><span class="round-rating">${rd.rating}</span></div>`).join('');
+                            }
+
+                            const outgoingCol = document.getElementById('outgoing-col');
+                            if (data.outgoing_rounds?.length) {
+                                outgoingCol.innerHTML = '<div class="rounds-col-title">Dropping</div>' +
+                                    data.outgoing_rounds.map(rd => `<div class="round-row"><span class="round-name">${rd.name} R${rd.round}</span><span class="round-rating">${rd.rating}</span></div>`).join('');
+                            }
+
+                            const outlierCol = document.getElementById('outlier-col');
+                            if (data.outlier_rounds?.length) {
+                                outlierCol.innerHTML = '<div class="rounds-col-title">Outliers</div>' +
+                                    data.outlier_rounds.map(rd => `<div class="round-row"><span class="round-name">${rd.name} R${rd.round}</span><span class="round-rating outlier">${rd.rating}</span></div>`).join('');
+                            } else {
+                                outlierCol.innerHTML = '<div class="rounds-col-title">Outliers</div><div class="no-outliers">No outlier rounds ✓</div>';
+                            }
+
+                            container.style.display = 'block';
+                            container.classList.add('fade-in');
+
+                        } catch (err) {
+                            spinner.style.display = 'none';
+                            errorEl.textContent = 'Error: ' + err.message;
+                            errorEl.style.display = 'block';
+                        }
+                    }
+                </script>
+            </article>
+
+            <!-- RF Generator -->
+            <article class="project project--featured">
+                <div class="project-tag">Arduino · Python · PyQt5 · I²C · Embedded C</div>
+                <div class="project-work-badge">MKS Instruments</div>
+                <h3 class="project-title">RF Generator Test Board</h3>
+                <p class="project-desc">Designed an Arduino-based test board to emulate RF generator control systems, enabling automated simulation of hardware/firmware configurations with minimal manual setup. Developed embedded firmware to simulate I²C command sequences and capture real-time telemetry. Built a standalone GUI for engineers to send commands and monitor board behavior, then integrated the whole platform into the existing regression suite.</p>
+                <a class="project-link" target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">LinkedIn ↗</a>
+            </article>
+
+            <!-- Grid -->
+            <div class="projects-grid">
+
+                <article class="project project--card">
+                    <div class="project-tag">LabVIEW</div>
+                    <h3 class="project-title">LabVIEW Game</h3>
+                    <p class="project-desc">Undergrad project: a fully interactive game built in LabVIEW. Demonstrates dataflow programming, event handling, and real-time state management.</p>
+                    <a class="project-link" target="_blank" href="https://www.youtube.com/embed/UtLs7RLfjmU">Watch Demo ↗</a>
+                </article>
+
+                <article class="project project--card">
+                    <div class="project-tag">Python · Twitter API · Reddit API</div>
+                    <h3 class="project-title">Twitter Bot</h3>
+                    <p class="project-desc">Automated bot that posts images hourly from r/Ooer using the Twitter and Reddit APIs. Built to learn API authentication and scheduled posting patterns.</p>
+                    <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/ooerbot">GitHub ↗</a>
+                </article>
+
+                <article class="project project--card">
+                    <div class="project-tag">Python</div>
+                    <h3 class="project-title">Wordle Solver</h3>
+                    <p class="project-desc">CLI tool for narrowing down Wordle solutions. Input your guesses and letter feedback — it returns a filtered list of remaining valid words.</p>
+                    <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/wordle-script">GitHub ↗</a>
+                </article>
+
+                <article class="project project--card">
+                    <div class="project-tag">Arduino · Python · Raspberry Pi</div>
+                    <h3 class="project-title">Weather Station</h3>
+                    <p class="project-desc">SparkFun weather sensors → Arduino → Raspberry Pi → WeeWX → local Apache dashboard. End-to-end hardware-software pipeline built during undergrad.</p>
+                    <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/weather-station">GitHub ↗</a>
+                </article>
+
+                <article class="project project--card">
+                    <div class="project-tag">Arduino · Embedded C</div>
+                    <h3 class="project-title">Tea AutoBrewer</h3>
+                    <p class="project-desc">Arduino-powered automated tea brewer with timed steeping sequences. Servo control, timing logic, and a satisfying real-world demo.</p>
+                    <a class="project-link" target="_blank" href="https://www.youtube.com/embed/s3Ynh-EgRVM">Watch Demo ↗</a>
+                </article>
+
+            </div>
+        </section>
 
         <!-- Experience -->
         <section class="section" id="experience">
@@ -144,182 +317,6 @@
             </div>
         </section>
 
-        <!-- Projects -->
-        <section class="section" id="projects">
-            <div class="section-label">Projects</div>
-
-            <!-- blamelog — featured, current -->
-            <article class="project project--featured">
-                <div class="project-tag">Python · Open Source · Developer Tooling</div>
-                <div class="project-work-badge project-work-badge--wip">In Progress</div>
-                <h3 class="project-title">blamelog</h3>
-                <p class="project-desc">
-                    A Python library that hooks into the runtime exception system and annotates each stack frame with <code>git blame</code> data — surfacing the author, commit, and timestamp of the last change to every line in a traceback. Instead of just knowing <em>what</em> broke, you immediately know <em>who</em> last touched it and when. Drop-in install with no code changes required.
-                </p>
-                <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/blamelog">GitHub ↗</a>
-            </article>
-
-            <!-- PDGA Rating Calculator — featured -->
-            <article class="project project--featured">
-                <div class="project-header">
-                    <div>
-                        <div class="project-tag">Python · Flask · BeautifulSoup · NumPy</div>
-                        <h3 class="project-title">PDGA Rating Calculator</h3>
-                        <p class="project-desc">
-                            Scrapes a player's PDGA profile to predict their official rating before the next update — no manual round entry required. Detects "Now Playing" and "Recent Events" pages, computes outlier cutoffs, and surfaces rounds being added or dropped. Exposed as a REST API via Flask; deployed on Render.
-                        </p>
-                        <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/pdga-rating-calculator">GitHub ↗</a>
-                    </div>
-                </div>
-
-                <div class="rating-tool">
-                    <div class="rating-tool-row">
-                        <div class="input-group">
-                            <label for="pdgaNumber">PDGA Number</label>
-                            <input type="text" id="pdgaNumber" placeholder="178379">
-                        </div>
-                        <div class="input-group">
-                            <label for="whatif">What-If Rounds <span class="label-hint">(comma-separated ratings)</span></label>
-                            <input type="text" id="whatif" placeholder="1000, 1020, 980">
-                        </div>
-                        <button onclick="calculateRating()">Calculate →</button>
-                    </div>
-
-                    <div id="spinner" class="spinner" style="display: none;"></div>
-
-                    <div id="result-container" style="display:none;">
-                        <div id="rating-display" class="rating-display"></div>
-                        <div class="rounds-grid">
-                            <div id="incoming-col" class="rounds-col"></div>
-                            <div id="outgoing-col" class="rounds-col"></div>
-                            <div id="outlier-col" class="rounds-col"></div>
-                        </div>
-                    </div>
-                    <pre id="result-error" style="display:none;"></pre>
-                </div>
-
-                <script>
-                    async function calculateRating() {
-                        const pdga = document.getElementById('pdgaNumber').value;
-                        const whatif = document.getElementById('whatif').value;
-                        const spinner = document.getElementById('spinner');
-                        const container = document.getElementById('result-container');
-                        const errorEl = document.getElementById('result-error');
-
-                        container.style.display = 'none';
-                        errorEl.style.display = 'none';
-                        spinner.style.display = 'flex';
-
-                        const query = new URLSearchParams({ pdga });
-                        if (whatif) query.append("whatif", whatif.replace(/\s/g, ''));
-
-                        try {
-                            const res = await fetch(`https://tylerjtiede-github-io.onrender.com/api/calculate?${query.toString()}`);
-                            const data = await res.json();
-                            spinner.style.display = 'none';
-
-                            if (data.error) {
-                                errorEl.textContent = `Error: ${data.error}`;
-                                errorEl.style.display = 'block';
-                                return;
-                            }
-
-                            // Rating display
-                            const ratingDisplay = document.getElementById('rating-display');
-                            const sign = data.rating_change >= 0 ? '+' : '';
-                            const changeClass = data.rating_change >= 0 ? 'positive' : 'negative';
-                            ratingDisplay.innerHTML = `
-                                <div class="rating-number">${data.pdga_rating}</div>
-                                <div class="rating-change ${changeClass}">${sign}${data.rating_change}</div>
-                                <div class="rating-cutoff">Outlier cutoff: <strong>${data.drop_below}</strong></div>
-                            `;
-
-                            // Incoming
-                            const incomingCol = document.getElementById('incoming-col');
-                            if (data.incoming_rounds?.length) {
-                                incomingCol.innerHTML = `<div class="rounds-col-title">Adding</div>` +
-                                    data.incoming_rounds.map(rd => `<div class="round-row"><span class="round-name">${rd.name} R${rd.round}</span><span class="round-rating">${rd.rating}</span></div>`).join('');
-                            }
-
-                            // Outgoing
-                            const outgoingCol = document.getElementById('outgoing-col');
-                            if (data.outgoing_rounds?.length) {
-                                outgoingCol.innerHTML = `<div class="rounds-col-title">Dropping</div>` +
-                                    data.outgoing_rounds.map(rd => `<div class="round-row"><span class="round-name">${rd.name} R${rd.round}</span><span class="round-rating">${rd.rating}</span></div>`).join('');
-                            }
-
-                            // Outliers
-                            const outlierCol = document.getElementById('outlier-col');
-                            if (data.outlier_rounds?.length) {
-                                outlierCol.innerHTML = `<div class="rounds-col-title">Outliers</div>` +
-                                    data.outlier_rounds.map(rd => `<div class="round-row"><span class="round-name">${rd.name} R${rd.round}</span><span class="round-rating outlier">${rd.rating}</span></div>`).join('');
-                            } else {
-                                outlierCol.innerHTML = `<div class="rounds-col-title">Outliers</div><div class="no-outliers">No outlier rounds ✓</div>`;
-                            }
-
-                            container.style.display = 'block';
-                            container.classList.add('fade-in');
-
-                        } catch (err) {
-                            spinner.style.display = 'none';
-                            errorEl.textContent = 'Error: ' + err.message;
-                            errorEl.style.display = 'block';
-                        }
-                    }
-                </script>
-            </article>
-
-            <!-- RF Generator — featured -->
-            <article class="project project--featured">
-                <div class="project-tag">Arduino · Python · PyQt5 · I²C · Embedded C</div>
-                <div class="project-work-badge">MKS Instruments</div>
-                <h3 class="project-title">RF Generator Test Board</h3>
-                <p class="project-desc">Designed an Arduino-based test board to emulate RF generator control systems, enabling automated simulation of hardware/firmware configurations with minimal manual setup. Developed embedded firmware to simulate I²C command sequences and capture real-time telemetry. Built a standalone GUI for engineers to send commands and monitor board behavior, then integrated the whole platform into the existing regression suite.</p>
-                <a class="project-link" target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">LinkedIn ↗</a>
-            </article>
-
-            <!-- Grid of smaller projects -->
-            <div class="projects-grid">
-
-                <article class="project project--card">
-                    <div class="project-tag">LabVIEW</div>
-                    <h3 class="project-title">LabVIEW Game</h3>
-                    <p class="project-desc">Undergrad project: a fully interactive game built in LabVIEW. Demonstrates dataflow programming, event handling, and real-time state management.</p>
-                    <a class="project-link" target="_blank" href="https://www.youtube.com/embed/UtLs7RLfjmU">Watch Demo ↗</a>
-                </article>
-
-
-                <article class="project project--card">
-                    <div class="project-tag">Python · Twitter API · Reddit API</div>
-                    <h3 class="project-title">Twitter Bot</h3>
-                    <p class="project-desc">Automated bot that posts images hourly from r/Ooer using the Twitter and Reddit APIs. Built to learn API authentication and scheduled posting patterns.</p>
-                    <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/ooerbot">GitHub ↗</a>
-                </article>
-
-                <article class="project project--card">
-                    <div class="project-tag">Python</div>
-                    <h3 class="project-title">Wordle Solver</h3>
-                    <p class="project-desc">CLI tool for narrowing down Wordle solutions. Input your guesses and letter feedback — it returns a filtered list of remaining valid words.</p>
-                    <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/wordle-script">GitHub ↗</a>
-                </article>
-
-                <article class="project project--card">
-                    <div class="project-tag">Arduino · Python · Raspberry Pi</div>
-                    <h3 class="project-title">Weather Station</h3>
-                    <p class="project-desc">SparkFun weather sensors → Arduino → Raspberry Pi → WeeWX → local Apache dashboard. End-to-end hardware-software pipeline built during undergrad.</p>
-                    <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/weather-station">GitHub ↗</a>
-                </article>
-
-                <article class="project project--card has-video">
-                    <div class="project-tag">Arduino · Embedded C</div>
-                    <h3 class="project-title">Tea AutoBrewer</h3>
-                    <p class="project-desc">Arduino-powered automated tea brewer with timed steeping sequences. Servo control, timing logic, and a satisfying real-world demo.</p>
-                    <a class="project-link" target="_blank" href="https://www.youtube.com/embed/s3Ynh-EgRVM">Watch Demo ↗</a>
-                </article>
-
-            </div>
-        </section>
-
         <!-- Education -->
         <section class="section section--edu">
             <div class="section-label">Education</div>
@@ -345,12 +342,9 @@
     </footer>
 
     <script>
-        // Staggered fade-in on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.08 });
 
