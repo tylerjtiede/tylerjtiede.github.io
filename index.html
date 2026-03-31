@@ -126,7 +126,7 @@
                 <p class="project-desc">
                     A backend service for tracking and analyzing progressive overload in strength training. Log sessions via a REST API built with FastAPI; the service computes progression curves, plateau detection, and volume load trends over time, persisted in SQLite. Designed with realistic backend concerns in mind: input validation, structured error handling, and a clean separation between data ingestion and analytics layers.
                 </p>
-                <a class="project-link" target="_blank" href="https://github.com/tylerjtiede">GitHub ↗</a>
+                <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/lift-tracker">GitHub ↗</a>
             </article>
 
             <!-- PDGA Rating Calculator -->
@@ -361,4 +361,11 @@
             });
         }, { threshold: 0.08 });
 
-        document.querySelectorAll('.section, .project, .exp-item
+        document.querySelectorAll('.section, .project, .exp-item, .skills-strip').forEach(el => {
+            el.classList.add('reveal');
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+</html>
