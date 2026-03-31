@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On the Course — Tyler Tiede</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <style>
+        :root {
+            --bg:      #0E0E12;
+            --text:    #E8E8EC;
+            --muted:   #7A7A90;
+            --accent:  #C8A96E;
+            --accent2: #6E8EC8;
+            --border:  rgba(255,255,255,0.07);
+            --font-serif: 'DM Serif Display', Georgia, serif;
+            --font-sans:  'DM Sans', system-ui, sans-serif;
+            --font-mono:  'DM Mono', monospace;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-sans); background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; }
+
+        .grain {
+            pointer-events: none; position: fixed; inset: -200%; width: 400%; height: 400%;
+            opacity: 0.028;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 256px 256px; z-index: 9999;
+            animation: grain 8s steps(2) infinite;
+        }
+        @keyframes grain {
+            0%  { transform: translate(0,0); } 20% { transform: translate(-3%,-5%); }
+            40% { transform: translate(4%,2%); } 60% { transform: translate(-4%,1%); }
+            80% { transform: translate(3%,6%); } 100%{ transform: translate(0,0); }
+        }
+
+        /* Navbar */
+        .navbar {
+            position: sticky; top: 0; z-index: 200;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1em 3vw;
+            background: rgba(14,14,18,0.88); backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo { font-family: var(--font-serif); font-size: 1.4rem; color: var(--accent); letter-spacing: 0.05em; text-decoration: none; }
+        .nav-links { display: flex; align-items: center; gap: 0.2em; }
+        .nav-links a {
+            font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted);
+            padding: 0.45em 0.9em; border-radius: 6px; text-decoration: none;
+            letter-spacing: 0.04em; transition: color 0.15s, background 0.15s;
+        }
+        .nav-links a:hover { color: var(--text); background: rgba(255,255,255,0.06); }
+        .nav-links a.active { color: var(--accent); }
+        .dropdown { position: relative; }
+        .dropbtn {
+            font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted);
+            padding: 0.45em 0.9em; border-radius: 6px; background: none; border: none;
+            cursor: pointer; letter-spacing: 0.04em; transition: color 0.15s, background 0.15s;
+        }
+        .dropbtn:hover { color: var(--text); background: rgba(255,255,255,0.06); }
+        .dropdown-content {
+            display: none; position: absolute; right: 0; top: 100%;
+            padding-top: 8px; min-width: 160px;
+        }
+        .dropdown-content::before {
+            content: ''; position: absolute; inset: 8px 0 0 0;
+            background: #14141A; border: 1px solid var(--border);
+            border-radius: 10px; box-shadow: 0 4px 32px rgba(0,0,0,0.5); z-index: -1;
+        }
+        .dropdown-content a {
+            position: relative; z-index: 1; display: block;
+            padding: 0.7em 1.1em; font-family: var(--font-mono); font-size: 0.78rem;
+            color: var(--muted); letter-spacing: 0.03em; text-decoration: none;
+            transition: background 0.12s, color 0.12s;
+        }
+        .dropdown-content a:hover { background: rgba(255,255,255,0.05); color: var(--text); }
+        .dropdown:hover .dropdown-content { display: block; }
+
+        /* Page hero */
+        .page-hero { padding: 5em 3vw 3em; max-width: 860px; margin: 0 auto; }
+        .page-eyebrow {
+            font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent);
+            letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.8em;
+        }
+        .page-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1.1; margin-bottom: 0.6em; }
+        .page-title em { font-style: italic; }
+        .page-subtitle { font-size: 1rem; color: var(--muted); max-width: 480px; line-height: 1.7; }
+        .divider { width: 100%; height: 1px; background: var(--border); margin: 0 0 4em; }
+
+        /* =====================
+           EVENT GROUPS
+           ===================== */
+        .gallery { padding: 0 3vw 6em; max-width: 1400px; margin: 0 auto; }
+
+        .event-group { margin-bottom: 5em; }
+        .event-header {
+            display: flex; align-items: baseline; gap: 1.2em;
+            margin-bottom: 1.2em; padding-bottom: 0.8em;
+            border-bottom: 1px solid var(--border);
+        }
+        .event-name {
+            font-family: var(--font-serif); font-size: 1.5rem; color: var(--text);
+        }
+        .event-date {
+            font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent);
+            letter-spacing: 0.1em; text-transform: uppercase;
+        }
+        .event-count {
+            font-family: var(--font-mono); font-size: 0.65rem; color: var(--muted);
+            letter-spacing: 0.06em; margin-left: auto;
+        }
+
+        /* The grid — uses explicit placement per event */
+        .photo-grid {
+            display: grid;
+            gap: 10px;
+        }
+
+        /* FDR Fools Fest — 3 portrait photos, equal columns */
+        .grid-fdr {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 520px;
+        }
+        .grid-fdr .p1  { grid-column: 1; }
+        .grid-fdr .p2  { grid-column: 2; }
+        .grid-fdr .p12 { grid-column: 3; }
+
+        /* Warwick — p11-style landscape hero + portraits */
+        .grid-warwick {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 340px 480px;
+        }
+        .grid-warwick .p5 { grid-column: 1 / 3; grid-row: 1; }
+        .grid-warwick .p7 { grid-column: 3; grid-row: 1 / 3; }
+        .grid-warwick .p3 { grid-column: 1; grid-row: 2; }
+        .grid-warwick .p4 { grid-column: 2; grid-row: 2; }
+        .grid-warwick .p6 { display: none; }
+
+        /* AFDO 2023 — 1 portrait photo, centered */
+        .grid-afdo23 {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 600px;
+        }
+        .grid-afdo23 .p10 { grid-column: 2; grid-row: 1; }
+
+        /* AFDO 2024 — 3 landscape photos stacked vertically */
+        .grid-afdo24 {
+            grid-template-columns: 1fr;
+            grid-template-rows: 500px 500px 500px;
+            gap: 10px;
+        }
+        .grid-afdo24 .p11 { grid-row: 1; }
+        .grid-afdo24 .p13 { grid-row: 2; }
+        .grid-afdo24 .p14 { grid-row: 3; }
+        .grid-afdo24 .p11 img { object-position: center 20%; }
+        .grid-afdo24 .p13 img { object-position: center top; }
+        .grid-afdo24 .p14 img { object-position: center 40%; }
+
+        /* Photo cell */
+        .photo-item {
+            position: relative; overflow: hidden; border-radius: 8px;
+            cursor: pointer; background: #18181F;
+        }
+        .photo-item img {
+            width: 100%; height: 100%; object-fit: cover;
+            display: block;
+            transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.4s ease;
+            filter: brightness(0.93) saturate(1.05);
+        }
+        .photo-item:hover img { transform: scale(1.04); filter: brightness(1) saturate(1.1); }
+
+        /* Hover overlay */
+        .photo-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(14,14,18,0.75) 0%, transparent 55%);
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        .photo-item:hover .photo-overlay { opacity: 1; }
+
+        .photo-item.focus-top img      { object-position: center top; }
+        .photo-item.focus-center img   { object-position: center center; }
+        .photo-item.focus-face img     { object-position: center 15%; }
+        .photo-item.focus-right img    { object-position: right center; }
+        .photo-item.focus-landscape img{ object-position: center 30%; }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed; inset: 0; z-index: 1000;
+            background: rgba(8,8,12,0.97);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.25s ease;
+            backdrop-filter: blur(12px);
+        }
+        .lightbox.open { opacity: 1; pointer-events: all; }
+        .lightbox-inner {
+            position: relative; max-width: 92vw; max-height: 92vh;
+            display: flex; flex-direction: column; align-items: center; gap: 1em;
+        }
+        .lightbox img {
+            max-width: 88vw; max-height: 82vh; object-fit: contain;
+            border-radius: 4px;
+            transform: scale(0.97); transition: transform 0.25s ease;
+        }
+        .lightbox.open img { transform: scale(1); }
+        .lightbox-caption {
+            font-family: var(--font-mono); font-size: 0.72rem;
+            color: var(--muted); letter-spacing: 0.08em; text-align: center;
+        }
+        .lightbox-caption strong { color: var(--accent); }
+        .lightbox-close {
+            position: fixed; top: 1.4em; right: 1.4em;
+            font-family: var(--font-mono); font-size: 0.78rem;
+            color: var(--muted); background: rgba(14,14,18,0.8);
+            border: 1px solid var(--border); padding: 0.4em 0.9em;
+            border-radius: 6px; cursor: pointer; transition: color 0.15s;
+        }
+        .lightbox-close:hover { color: var(--text); }
+        .lightbox-nav {
+            position: fixed; top: 50%; transform: translateY(-50%);
+            font-family: var(--font-mono); font-size: 1rem;
+            color: var(--muted); background: rgba(14,14,18,0.7);
+            border: 1px solid var(--border); width: 42px; height: 42px;
+            border-radius: 50%; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: color 0.15s, background 0.15s;
+        }
+        .lightbox-nav:hover { color: var(--text); background: rgba(14,14,18,0.95); }
+        .lightbox-prev { left: 1.2em; }
+        .lightbox-next { right: 1.2em; }
+
+        /* Reveal */
+        .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* Footer */
+        footer { border-top: 1px solid var(--border); padding: 2em 3vw; }
+        .footer-inner {
+            max-width: 860px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 1em;
+            font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); letter-spacing: 0.04em;
+        }
+        .footer-links { display: flex; gap: 1.2em; }
+        .footer-links a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+        .footer-links a:hover { color: var(--text); }
+
+        /* Responsive */
+        @media (max-width: 860px) {
+            .grid-fdr, .grid-warwick {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+            }
+            .grid-fdr .p1, .grid-fdr .p9,
+            .grid-fdr .p2, .grid-fdr .p8 { grid-column: auto; grid-row: auto; }
+            .grid-warwick .p5, .grid-warwick .p7,
+            .grid-warwick .p3, .grid-warwick .p4 { grid-column: auto; grid-row: auto; }
+            .grid-warwick .p5 { grid-column: 1 / 3; }
+            .photo-item { height: 260px; }
+            .grid-afdo23 { grid-template-columns: 1fr; }
+            .grid-afdo23 .p10 { grid-column: 1; height: 380px; }
+        }
+        @media (max-width: 520px) {
+            .grid-fdr, .grid-warwick { grid-template-columns: 1fr; }
+            .grid-fdr .p1, .grid-fdr .p9, .grid-fdr .p2, .grid-fdr .p8,
+            .grid-warwick .p5, .grid-warwick .p7, .grid-warwick .p3, .grid-warwick .p4
+            { grid-column: 1 !important; grid-row: auto !important; height: 280px; }
+            .lightbox-nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grain"></div>
+
+    <header class="navbar">
+        <a href="index.html" class="nav-logo">T</a>
+        <nav class="nav-links">
+            <a href="index.html">home</a>
+            <a href="index.html#projects">projects</a>
+            <a href="gallery.html" class="active">gallery</a>
+            <div class="dropdown">
+                <button class="dropbtn">links ↓</button>
+                <div class="dropdown-content">
+                    <a target="_blank" href="resume/resume-2026.pdf">↗ resume</a>
+                    <a target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">↗ linkedin</a>
+                    <a target="_blank" href="https://github.com/tylerjtiede">↗ github</a>
+                    <a target="_blank" href="https://www.youtube.com/@TylerTiede">↗ youtube</a>
+                    <a target="_blank" href="https://www.instagram.com/tylertiede/">↗ instagram</a>
+                    <a target="_blank" href="https://www.pdga.com/player/178379">↗ pdga</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-hero reveal">
+        <div class="page-eyebrow">PDGA #178379</div>
+        <h1 class="page-title">On the<br><em>Course</em></h1>
+        <p class="page-subtitle">I take disc golf unreasonably seriously. These are the receipts.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <section class="gallery">
+
+        <!-- Warwick Disc Golf Championships 2025 -->
+        <div class="event-group reveal">
+            <div class="event-header">
+                <div class="event-name">Warwick Disc Golf Championships</div>
+                <div class="event-date">2025</div>
+                <div class="event-count">5 photos</div>
+            </div>
+            <div class="photo-grid grid-warwick">
+                <div class="photo-item p5 focus-top" data-src="images/gallery/photo5.jpg" data-event="Warwick Disc Golf Championships" data-year="2025">
+                    <img src="images/gallery/photo5.jpg" alt="Warwick Disc Golf Championships 2025">
+                    <div class="photo-overlay"></div>
+                </div>
+                <div class="photo-item p7 focus-top" data-src="images/gallery/photo7.jpg" data-event="Warwick Disc Golf Championships" data-year="2025">
+                    <img src="images/gallery/photo7.jpg" alt="Warwick Disc Golf Championships 2025">
+                    <div class="photo-overlay"></div>
+                </div>
+                <div class="photo-item p3 focus-top" data-src="images/gallery/photo3.jpg" data-event="Warwick Disc Golf Championships" data-year="2025">
+                    <img src="images/gallery/photo3.jpg" alt="Warwick Disc Golf Championships 2025">
+                    <div class="photo-overlay"></div>
+                </div>
+                <div class="photo-item p4 focus-top" data-src="images/gallery/photo4.jpg" data-event="Warwick Disc Golf Championships" data-year="2025">
+                    <img src="images/gallery/photo4.jpg" alt="Warwick Disc Golf Championships 2025">
+                    <div class="photo-overlay"></div>
+                </div>
+                <div class="photo-item p6 focus-top" data-src="images/gallery/photo6.jpg" data-event="Warwick Disc Golf Championships" data-year="2025">
+                    <img src="images/gallery/photo6.jpg" alt="Warwick Disc Golf Championships 2025">
+                    <div class="photo-overlay"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FDR Fools Fest 2025 -->
+        <div class="event-group reveal">
+            <div class="event-header">
+                <div class="event-name">FDR Fools Fest</div>
+                <div class="event-date">2025</div>
+                <div class="event-count">3 photos</div>
+            </div>
+            <div class="photo-grid grid-fdr">
+                <div class="photo-item p1 focus-top" data-src="images/gallery/photo1.jpg" data-event="FDR Fools Fest" data-year="2025">
+                    <img src="images/gallery/photo1.jpg" alt="FDR Fools Fest 2025">
+                    <div class="photo-overlay"></div>
+                </div>
+                <div class="photo-item p2 focus-top" data-src="images/gallery/photo2.jpg" data-event="FDR Fools Fest" data-year="2025">
+                    <img src="images/gallery/photo2.jpg" alt="FDR Fools Fest 2025">
+                    <div class="photo-overlay"></div>
+                </div>
+                <div class="photo-item p12 focus-top" data-src="images/gallery/photo12.jpg" data-event="FDR Fools Fest" data-year="2025">
+                    <img src="images/gallery/photo12.jpg" alt="FDR Fools Fest 2025">
+                    <div class="photo-overlay"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AFDO 2024 -->
+        <div class="event-group reveal">
+            <div class="event-header">
+                <div class="event-name">American Flying Disc Open</div>
+                <div class="event-date">2024</div>
+                <div class="event-count">3 photos</div>
+            </div>
+            <div class="photo-grid grid-afdo24">
+                <div class="photo-item p11" data-src="images/gallery/photo11.jpg" data-event="American Flying Disc Open" data-year="2024">
+                    <img src="images/gallery/photo11.jpg" alt="American Flying Disc Open 2024">
+                    <div class="photo-overlay"></div>
+                </div>
+                <div class="photo-item p13" data-src="images/gallery/photo13.jpg" data-event="American Flying Disc Open" data-year="2024">
+                    <img src="images/gallery/photo13.jpg" alt="American Flying Disc Open 2024">
+                    <div class="photo-overlay"></div>
+                </div>
+                <div class="photo-item p14" data-src="images/gallery/photo14.jpg" data-event="American Flying Disc Open" data-year="2024">
+                    <img src="images/gallery/photo14.jpg" alt="American Flying Disc Open 2024">
+                    <div class="photo-overlay"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AFDO 2023 -->
+        <div class="event-group reveal">
+            <div class="event-header">
+                <div class="event-name">American Flying Disc Open</div>
+                <div class="event-date">2023</div>
+                <div class="event-count">1 photo</div>
+            </div>
+            <div class="photo-grid grid-afdo23">
+                <div class="photo-item p10 focus-face" data-src="images/gallery/photo10.jpg" data-event="American Flying Disc Open" data-year="2023">
+                    <img src="images/gallery/photo10.jpg" alt="American Flying Disc Open 2023">
+                    <div class="photo-overlay"></div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">✕ close</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">←</button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">→</button>
+        <div class="lightbox-inner">
+            <img id="lightboxImg" src="" alt="">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <span>Tyler Tiede · Software Engineer</span>
+            <span class="footer-links">
+                <a target="_blank" href="https://github.com/tylerjtiede">GitHub</a>
+                <a target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">LinkedIn</a>
+                <a target="_blank" href="https://www.pdga.com/player/178379">PDGA</a>
+            </span>
+            <span>© 2026</span>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.06 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Photo stagger within groups
+        document.querySelectorAll('.event-group').forEach(group => {
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        group.querySelectorAll('.photo-item').forEach((item, i) => {
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(12px)';
+                            item.style.transition = `opacity 0.45s ease ${i * 0.07}s, transform 0.45s ease ${i * 0.07}s`;
+                            requestAnimationFrame(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0)';
+                            });
+                        });
+                        obs.disconnect();
+                    }
+                });
+            }, { threshold: 0.1 });
+            obs.observe(group);
+        });
+
+        // Lightbox
+        const allPhotos = Array.from(document.querySelectorAll('.photo-item[data-src]'));
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+        let currentIdx = 0;
+
+        function openLightbox(idx) {
+            currentIdx = idx;
+            const el = allPhotos[idx];
+            lightboxImg.src = el.dataset.src;
+            lightboxCaption.innerHTML = `<strong>${el.dataset.event}</strong> &nbsp;·&nbsp; ${el.dataset.year}`;
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function navigate(dir) {
+            currentIdx = (currentIdx + dir + allPhotos.length) % allPhotos.length;
+            const el = allPhotos[currentIdx];
+            lightboxImg.style.opacity = '0';
+            setTimeout(() => {
+                lightboxImg.src = el.dataset.src;
+                lightboxCaption.innerHTML = `<strong>${el.dataset.event}</strong> &nbsp;·&nbsp; ${el.dataset.year}`;
+                lightboxImg.style.opacity = '1';
+            }, 150);
+        }
+
+        allPhotos.forEach((item, i) => item.addEventListener('click', () => openLightbox(i)));
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        document.getElementById('lightboxPrev').addEventListener('click', () => navigate(-1));
+        document.getElementById('lightboxNext').addEventListener('click', () => navigate(1));
+        lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', e => {
+            if (!lightbox.classList.contains('open')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigate(-1);
+            if (e.key === 'ArrowRight') navigate(1);
+        });
+    </script>
+
+</body>
+</html>
