@@ -53,11 +53,12 @@
                     Backend engineer with 3+ years building test infrastructure, automation frameworks, and hardware-software integration systems. My Applied Physics background means I'm as comfortable reading a datasheet as I am writing a test suite — and I care deeply about software that actually works in the real world.
                 </p>
                 <p class="hero-sub">
-                    Currently building <a href="https://github.com/tylerjtiede/blamelog" target="_blank">blamelog</a>, a Python developer tooling library. Also: disc golfer, content creator, cat person.
+                    Currently building <a href="https://github.com/tylerjtiede/blamelog" target="_blank">blamelog</a> and <a href="https://github.com/tylerjtiede/lift-tracker" target="_blank">lift-tracker</a>.<br>
+                    Also: disc golfer, content creator, cat person.
                 </p>
             </div>
             <div class="hero-links">
-                <a class="btn-primary" href="mailto:tylertiede@gmail.com">Get in Touch ↗</a>
+                <a class="btn-primary" href="/cdn-cgi/l/email-protection#9aeee3f6ffe8eef3fffeffdafdf7fbf3f6b4f9f5f7">Get in Touch ↗</a>
                 <a class="btn-ghost" href="resume/resume-2026.pdf" target="_blank">View Resume</a>
             </div>
         </section>
@@ -67,6 +68,7 @@
             <div class="skills-track">
                 <span>Python</span><span class="dot">·</span>
                 <span>Flask</span><span class="dot">·</span>
+                <span>FastAPI</span><span class="dot">·</span>
                 <span>PyTest</span><span class="dot">·</span>
                 <span>NumPy</span><span class="dot">·</span>
                 <span>Pandas</span><span class="dot">·</span>
@@ -84,6 +86,7 @@
                 <span>Raspberry Pi</span><span class="dot">·</span>
                 <span>Python</span><span class="dot">·</span>
                 <span>Flask</span><span class="dot">·</span>
+                <span>FastAPI</span><span class="dot">·</span>
                 <span>PyTest</span><span class="dot">·</span>
                 <span>NumPy</span><span class="dot">·</span>
                 <span>Pandas</span><span class="dot">·</span>
@@ -115,6 +118,17 @@
                     A Python library that hooks into the runtime exception system and annotates each stack frame with <code>git blame</code> data — surfacing the author, commit, and timestamp of the last change to every line in a traceback. Instead of just knowing <em>what</em> broke, you immediately know <em>who</em> last touched it and when. Drop-in install with no code changes required.
                 </p>
                 <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/blamelog">GitHub ↗</a>
+            </article>
+
+            <!-- lift-tracker -->
+            <article class="project project--featured">
+                <div class="project-tag">Python · FastAPI · SQLite · Pydantic</div>
+                <div class="project-work-badge project-work-badge--wip">In Progress</div>
+                <h3 class="project-title">lift-tracker</h3>
+                <p class="project-desc">
+                    A FastAPI backend for tracking and analyzing strength training progress. Log sessions by exercise and program, then query for progression trends, plateau detection, training gaps, and rule-based recommendations. Built with SQLite for zero-config persistence and deployed on Render.
+                </p>
+                <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/lift-tracker">GitHub ↗</a>
             </article>
 
             <!-- PDGA Rating Calculator -->
@@ -154,7 +168,7 @@
                     <pre id="result-error" style="display:none;"></pre>
                 </div>
 
-                <script>
+                <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
                     async function calculateRating() {
                         const pdga = document.getElementById('pdgaNumber').value;
                         const whatif = document.getElementById('whatif').value;
