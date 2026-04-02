@@ -115,8 +115,8 @@
                 <div class="project-work-badge project-work-badge--wip">In Progress</div>
                 <h3 class="project-title">blamelog</h3>
                 <p class="project-desc">
-                    A Python library that hooks into the runtime exception system and annotates each stack frame with <code>git blame</code> data — surfacing the author, commit, and timestamp of the last change to every line in a traceback. Instead of just knowing <em>what</em> broke, you immediately know <em>who</em> last touched it and when. Drop-in install with no code changes required.
-                </p>
+                    A Python CLI tool that layers <code>git blame</code> authorship data with churn scoring and AST-based test gap detection to surface the highest-risk files in a codebase — not just what changed, but what changed often, without test coverage, and who owns it. Uses git history as a cache invalidation signal to avoid redundant analysis on unchanged files. Built with a <code>src/</code> layout, Click, Rich, and GitPython; distributed via PyPI with GitHub Actions CI.
+                </p>    
                 <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/blamelog">GitHub ↗</a>
             </article>
 
@@ -126,7 +126,7 @@
                 <div class="project-work-badge project-work-badge--wip">In Progress</div>
                 <h3 class="project-title">lift-tracker</h3>
                 <p class="project-desc">
-                    A FastAPI backend for tracking and analyzing strength training progress. Log sessions by exercise and program, then query for progression trends, plateau detection, training gaps, and rule-based recommendations. Built with SQLite for zero-config persistence and deployed on Render.
+                    A backend service for tracking and analyzing progressive overload in strength training. Log sessions via a REST API built with FastAPI; the service computes progression curves, plateau detection, and volume load trends over time, persisted in SQLite. Designed with realistic backend concerns in mind: input validation, structured error handling, and a clean separation between data ingestion and analytics layers.
                 </p>
                 <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/lift-tracker">GitHub ↗</a>
             </article>
@@ -240,7 +240,7 @@
                 <div class="project-tag">Arduino · Python · PyQt5 · I²C · Embedded C</div>
                 <div class="project-work-badge">MKS Instruments</div>
                 <h3 class="project-title">RF Generator Test Board</h3>
-                <p class="project-desc">Designed an Arduino-based test board to emulate RF generator control systems, enabling automated simulation of hardware/firmware configurations with minimal manual setup. Developed embedded firmware to simulate I²C command sequences and capture real-time telemetry. Built a standalone GUI for engineers to send commands and monitor board behavior, then integrated the whole platform into the existing regression suite.</p>
+                <p class="project-desc">Designed and built a programmable hardware emulation platform to simulate RF generator control systems, enabling automated regression testing of firmware configurations with minimal manual setup. Developed embedded firmware for I²C command sequences and real-time telemetry capture, a standalone Python GUI for live command-and-monitor workflows, and integrated the full platform into a large-scale pre-existing regression suite — extending coverage without disrupting established CI pipelines.</p>
                 <a class="project-link" target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">LinkedIn ↗</a>
             </article>
 
