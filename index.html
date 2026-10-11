@@ -1,12 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDGA Rating Calculator — Tyler Tiede</title>
-    <!-- Original title: <title>Tyler Tiede — Software Engineer</title> -->
+    <title>Tyler Tiede — Software Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
@@ -28,16 +26,14 @@
             <span class="logo-tt">T</span>
         </div>
         <nav class="nav-links">
-            <!-- REMOVED NAV LINKS (restore to revert):
-            <a href="#about">about</a>
-            <a href="#projects">projects</a>
-            <a href="gallery.html">gallery</a>
-            -->
+            <!-- <a href="#about">about</a> -->
+            <!-- <a href="#projects">projects</a> -->
+            <!-- <a href="gallery.html">gallery</a> -->
             <div class="dropdown">
                 <button class="dropbtn">links ↓</button>
                 <div class="dropdown-content">
-                    <!-- REMOVED: <a target="_blank" href="resume/resume-2026.pdf">↗ resume</a> -->
-                    <a target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">↗ linkedin</a>
+                    <!-- <a target="_blank" href="resume/resume-2026.pdf">↗ resume</a> -->
+                    <!-- <a target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">↗ linkedin</a> -->
                     <a target="_blank" href="https://github.com/tylerjtiede">↗ github</a>
                     <a target="_blank" href="https://www.youtube.com/@TylerTiede">↗ youtube</a>
                     <a target="_blank" href="https://www.instagram.com/tylertiede/">↗ instagram</a>
@@ -49,8 +45,8 @@
 
     <main>
 
-        <!-- REMOVED SECTION: Hero (restore to revert)
-        <section class="hero" id="about">
+        <!-- Hero -->
+        <!-- <section class="hero" id="about">
             <div class="hero-eyebrow">Software Engineer · Rochester, NY</div>
             <h1 class="hero-name">
                 Tyler<br>
@@ -69,11 +65,10 @@
                 <a class="btn-primary" href="/cdn-cgi/l/email-protection#9aeee3f6ffe8eef3fffeffdafdf7fbf3f6b4f9f5f7">Get in Touch ↗</a>
                 <a class="btn-ghost" href="resume/resume-2026.pdf" target="_blank">View Resume</a>
             </div>
-        </section>
-        -->
+        </section> -->
 
-        <!-- REMOVED SECTION: Skills strip (restore to revert)
-        <div class="skills-strip">
+        <!-- Skills strip -->
+        <!-- <div class="skills-strip">
             <div class="skills-track">
                 <span>Python</span><span class="dot">·</span>
                 <span>Flask</span><span class="dot">·</span>
@@ -112,17 +107,15 @@
                 <span>Arduino</span><span class="dot">·</span>
                 <span>Raspberry Pi</span><span class="dot">·</span>
             </div>
-        </div>
-        -->
+        </div> -->
 
         <!-- Projects -->
         <section class="section" id="projects">
-            <!-- REMOVED: <div class="section-label">Projects</div> -->
+            <!-- <div class="section-label">Projects</div> -->
 
             <!-- PDGA Rating Calculator -->
             <article class="project project--featured">
-                <!-- REMOVED TEXT (restore to revert):
-                <div class="project-header">
+                <!-- <div class="project-header">
                     <div>
                         <div class="project-tag">Python · Flask · BeautifulSoup · NumPy</div>
                         <h3 class="project-title">PDGA Rating Calculator</h3>
@@ -133,8 +126,7 @@
                         </p>
                         <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/pdga-rating-calculator">GitHub ↗</a>
                     </div>
-                </div>
-                -->
+                </div> -->
 
                 <div class="rating-tool">
                     <div class="rating-tool-row">
@@ -160,7 +152,7 @@
                     <pre id="result-error" style="display:none;"></pre>
                 </div>
 
-                <script>
+                <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
                     async function calculateRating() {
                         const pdga = document.getElementById('pdgaNumber').value;
                         const whatif = document.getElementById('whatif').value;
@@ -227,21 +219,19 @@
                 </script>
             </article>
 
-            <!-- REMOVED PROJECTS (restore to revert):
-
-            [blamelog]
-            <article class="project project--featured">
+            <!-- blamelog -->
+            <!-- <article class="project project--featured">
                 <div class="project-tag">Python · Open Source · Developer Tooling</div>
                 <div class="project-work-badge project-work-badge--wip">In Progress</div>
                 <h3 class="project-title">blamelog</h3>
                 <p class="project-desc">
                     A Python CLI tool that layers <code>git blame</code> authorship data with churn scoring and AST-based test gap detection to surface the highest-risk files in a codebase — not just what changed, but what changed often, without test coverage, and who owns it. Uses git history as a cache invalidation signal to avoid redundant analysis on unchanged files. Built with a <code>src/</code> layout, Click, Rich, and GitPython; distributed via PyPI with GitHub Actions CI.
-                </p>
+                </p>    
                 <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/blamelog">GitHub ↗</a>
-            </article>
+            </article> -->
 
-            [lift-tracker]
-            <article class="project project--featured">
+            <!-- lift-tracker -->
+            <!-- <article class="project project--featured">
                 <div class="project-tag">Python · FastAPI · SQLite · Pydantic</div>
                 <div class="project-work-badge project-work-badge--wip">In Progress</div>
                 <h3 class="project-title">lift-tracker</h3>
@@ -249,19 +239,19 @@
                     A backend service for tracking and analyzing progressive overload in strength training. Log sessions via a REST API built with FastAPI; the service computes progression curves, plateau detection, and volume load trends over time, persisted in SQLite. Designed with realistic backend concerns in mind: input validation, structured error handling, and a clean separation between data ingestion and analytics layers.
                 </p>
                 <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/lift-tracker">GitHub ↗</a>
-            </article>
+            </article> -->
 
-            [RF Generator]
-            <article class="project project--featured">
+            <!-- RF Generator -->
+            <!-- <article class="project project--featured">
                 <div class="project-tag">Arduino · Python · PyQt5 · I²C · Embedded C</div>
                 <div class="project-work-badge">MKS Instruments</div>
                 <h3 class="project-title">RF Generator Test Board</h3>
                 <p class="project-desc">Designed and built a programmable hardware emulation platform to simulate RF generator control systems, enabling automated regression testing of firmware configurations with minimal manual setup. Developed embedded firmware for I²C command sequences and real-time telemetry capture, a standalone Python GUI for live command-and-monitor workflows, and integrated the full platform into a large-scale pre-existing regression suite — extending coverage without disrupting established CI pipelines.</p>
                 <a class="project-link" target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">LinkedIn ↗</a>
-            </article>
+            </article> -->
 
-            [Grid]
-            <div class="projects-grid">
+            <!-- Grid -->
+            <!-- <div class="projects-grid">
 
                 <article class="project project--card">
                     <div class="project-tag">LabVIEW</div>
@@ -298,12 +288,11 @@
                     <a class="project-link" target="_blank" href="https://www.youtube.com/embed/s3Ynh-EgRVM">Watch Demo ↗</a>
                 </article>
 
-            </div>
-            -->
-        </section>
+            </div> -->
+        <!-- </section> -->
 
-        <!-- REMOVED SECTION: Experience (restore to revert)
-        <section class="section" id="experience">
+        <!-- Experience -->
+        <!-- <section class="section" id="experience">
             <div class="section-label">Experience</div>
             <div class="experience-list">
 
@@ -347,29 +336,27 @@
                 </div>
 
             </div>
-        </section>
-        -->
+        </section> -->
 
-        <!-- REMOVED SECTION: Education (restore to revert)
-        <section class="section section--edu">
+        <!-- Education -->
+        <!-- <section class="section section--edu">
             <div class="section-label">Education</div>
             <div class="edu-block">
                 <div class="edu-degree">B.S. Applied Physics</div>
                 <div class="edu-school">SUNY Geneseo</div>
                 <div class="edu-detail">Minor in Mathematics · May 2021</div>
             </div>
-        </section>
-        -->
+        </section> -->
 
     </main>
 
     <footer>
         <div class="footer-inner">
-            <!-- Original: <span>Tyler Tiede · Software Engineer</span> -->
-            <span>Tyler Tiede</span>
+            <!-- <span>Tyler Tiede · Software Engineer</span> -->
+             <span>Tyler Tiede</span>
             <span class="footer-links">
                 <a target="_blank" href="https://github.com/tylerjtiede">GitHub</a>
-                <a target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">LinkedIn</a>
+                <!-- <a target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">LinkedIn</a> -->
                 <a target="_blank" href="https://www.pdga.com/player/178379">PDGA</a>
             </span>
             <span>© 2026</span>
@@ -383,8 +370,7 @@
             });
         }, { threshold: 0.08 });
 
-        // Original selector: '.section, .project, .exp-item, .skills-strip'
-        document.querySelectorAll('.section, .project').forEach(el => {
+        document.querySelectorAll('.section, .project, .exp-item, .skills-strip').forEach(el => {
             el.classList.add('reveal');
             observer.observe(el);
         });
