@@ -12,6 +12,9 @@
 #
 #   + Retry logic with backoff on HTTP failures
 #   + Graceful error handling on malformed HTML
+#   + Browser-like headers (a custom bot UA was likely causing 403s)
+#   + Only retry transient errors (429/5xx/connection), not 403/404
+#   + Short in-memory cache to cut request volume to pdga.com
 
 import re
 import time
@@ -32,9 +35,21 @@ MIN_ROUNDS_1_YEAR = 8
 
 MAX_RETRIES   = 3
 RETRY_BACKOFF = 2  # seconds
+RETRYABLE_STATUS = {429, 500, 502, 503, 504}
+
+CACHE_TTL_SECS = 600  # 10 minutes
+_CACHE: dict = {}     # url -> (fetched_at, html_text)
 
 SESSION = requests.Session()
-SESSION.headers.update({"User-Agent": "pdga-ratings-calculator/1.0"})
+SESSION.headers.update({
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Referer": "https://www.pdga.com/",
+})
 
 
 # ---------------------------------------------------------------------------
@@ -42,17 +57,27 @@ SESSION.headers.update({"User-Agent": "pdga-ratings-calculator/1.0"})
 # ---------------------------------------------------------------------------
 
 def _fetch(url: str) -> BeautifulSoup:
-    """Fetch url with retries. Raises RuntimeError on repeated failure."""
+    """Fetch url with caching and retries. Raises RuntimeError on failure."""
+    cached = _CACHE.get(url)
+    if cached and time.time() - cached[0] < CACHE_TTL_SECS:
+        return BeautifulSoup(cached[1], "html.parser")
+
     last_exc = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
             response = SESSION.get(url, timeout=15)
-            response.raise_for_status()
-            return BeautifulSoup(response.text, "html.parser")
-        except requests.RequestException as e:
+            if response.status_code in RETRYABLE_STATUS:
+                last_exc = RuntimeError(f"HTTP {response.status_code}")
+            else:
+                response.raise_for_status()  # 403/404 etc. raise and are NOT retried
+                _CACHE[url] = (time.time(), response.text)
+                return BeautifulSoup(response.text, "html.parser")
+        except requests.HTTPError as e:
+            raise RuntimeError(f"Failed to fetch {url}: {e}")
+        except requests.RequestException as e:  # timeouts, connection errors
             last_exc = e
-            if attempt < MAX_RETRIES:
-                time.sleep(RETRY_BACKOFF * attempt)
+        if attempt < MAX_RETRIES:
+            time.sleep(RETRY_BACKOFF * attempt)
     raise RuntimeError(f"Failed to fetch {url} after {MAX_RETRIES} attempts: {last_exc}")
 
 
