@@ -113,6 +113,12 @@
         <section class="section" id="projects">
             <!-- <div class="section-label">Projects</div> -->
 
+            <div class="tool-notice" style="border:1px solid rgba(220,60,60,.6); background:rgba(220,60,60,.08); border-radius:8px; padding:1rem 1.25rem; margin-bottom:1.5rem; line-height:1.5;">
+                <strong>This tool is no longer available.</strong><br>
+                PDGA has begun blocking automated requests to their website, so the calculator can no longer retrieve player data.
+                Unfortunately I am unable to find a workaround to make it work again. Sorry.
+            </div>
+
             <!-- PDGA Rating Calculator -->
             <article class="project project--featured">
                 <!-- <div class="project-header">
@@ -138,7 +144,8 @@
                             <label for="whatif">What-If Rounds <span class="label-hint">(comma-separated ratings)</span></label>
                             <input type="text" id="whatif" placeholder="1000, 1020, 980">
                         </div>
-                        <button onclick="calculateRating()">Calculate →</button>
+                        <!-- <button onclick="calculateRating()">Calculate →</button> -->
+                         <button onclick="calculateRating()" disabled style="opacity:.4; cursor:not-allowed;">Calculate →</button>
                     </div>
                     <div id="spinner" class="spinner" style="display: none;"></div>
                     <div id="result-container" style="display:none;">
