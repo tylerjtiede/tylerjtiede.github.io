@@ -11,10 +11,6 @@
     <link rel="stylesheet" href="styles.css?v=2.0">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.png" type="image/png">
-    <style>
-        /* Spacing so the calculator clears the navbar (the hero used to provide this) */
-        #projects { padding-top: 7rem; }
-    </style>
 </head>
 
 <body>
@@ -26,14 +22,14 @@
             <span class="logo-tt">T</span>
         </div>
         <nav class="nav-links">
-            <!-- <a href="#about">about</a> -->
-            <!-- <a href="#projects">projects</a> -->
-            <!-- <a href="gallery.html">gallery</a> -->
+            <a href="#about">about</a>
+            <a href="#projects">projects</a>
+            <a href="gallery.html">gallery</a>
             <div class="dropdown">
                 <button class="dropbtn">links ↓</button>
                 <div class="dropdown-content">
-                    <!-- <a target="_blank" href="resume/resume-2026.pdf">↗ resume</a> -->
-                    <!-- <a target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">↗ linkedin</a> -->
+                    <a target="_blank" href="resume/resume-2026.pdf">↗ resume</a>
+                    <a target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">↗ linkedin</a>
                     <a target="_blank" href="https://github.com/tylerjtiede">↗ github</a>
                     <a target="_blank" href="https://www.youtube.com/@TylerTiede">↗ youtube</a>
                     <a target="_blank" href="https://www.instagram.com/tylertiede/">↗ instagram</a>
@@ -46,7 +42,7 @@
     <main>
 
         <!-- Hero -->
-        <!-- <section class="hero" id="about">
+        <section class="hero" id="about">
             <div class="hero-eyebrow">Software Engineer · Rochester, NY</div>
             <h1 class="hero-name">
                 Tyler<br>
@@ -65,12 +61,13 @@
                 <a class="btn-primary" href="/cdn-cgi/l/email-protection#9aeee3f6ffe8eef3fffeffdafdf7fbf3f6b4f9f5f7">Get in Touch ↗</a>
                 <a class="btn-ghost" href="resume/resume-2026.pdf" target="_blank">View Resume</a>
             </div>
-        </section> -->
+        </section>
 
         <!-- Skills strip -->
-        <!-- <div class="skills-strip">
+        <div class="skills-strip">
             <div class="skills-track">
                 <span>Python</span><span class="dot">·</span>
+                <span>C++</span><span class="dot">·</span>
                 <span>Flask</span><span class="dot">·</span>
                 <span>FastAPI</span><span class="dot">·</span>
                 <span>PyTest</span><span class="dot">·</span>
@@ -89,6 +86,7 @@
                 <span>Arduino</span><span class="dot">·</span>
                 <span>Raspberry Pi</span><span class="dot">·</span>
                 <span>Python</span><span class="dot">·</span>
+                <span>C++</span><span class="dot">·</span>
                 <span>Flask</span><span class="dot">·</span>
                 <span>FastAPI</span><span class="dot">·</span>
                 <span>PyTest</span><span class="dot">·</span>
@@ -107,138 +105,25 @@
                 <span>Arduino</span><span class="dot">·</span>
                 <span>Raspberry Pi</span><span class="dot">·</span>
             </div>
-        </div> -->
+        </div>
 
         <!-- Projects -->
         <section class="section" id="projects">
-            <!-- <div class="section-label">Projects</div> -->
-
-            <div class="tool-notice" style="border:1px solid rgba(220,60,60,.6); background:rgba(220,60,60,.08); border-radius:8px; padding:1rem 1.25rem; margin-bottom:1.5rem; line-height:1.5;">
-                <strong>This tool is no longer available.</strong><br>
-                PDGA has begun blocking automated requests to their website, so the calculator can no longer retrieve player data.
-                Unfortunately I am unable to find a workaround to make it work again. Sorry.
-            </div>
-
-            <!-- PDGA Rating Calculator -->
-            <article class="project project--featured">
-                <!-- <div class="project-header">
-                    <div>
-                        <div class="project-tag">Python · Flask · BeautifulSoup · NumPy</div>
-                        <h3 class="project-title">PDGA Rating Calculator</h3>
-                        <p class="project-desc">
-                            <strong><p style="color: red;">ATTENTION:</p> This tool will soon be moved to its own standalone website. I will update this portfolio page when that happens. If you would like to request any new features, message me on instagram @tylertiede. :)</strong>
-                            <br><br>
-                            Scrapes a player's PDGA profile to predict their official rating before the next update — no manual round entry required. Detects "Now Playing" and "Recent Events" pages, computes outlier cutoffs, and surfaces rounds being added or dropped. Exposed as a REST API via Flask; deployed on Render.
-                        </p>
-                        <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/pdga-rating-calculator">GitHub ↗</a>
-                    </div>
-                </div> -->
-
-                <div class="rating-tool">
-                    <div class="rating-tool-row">
-                        <div class="input-group">
-                            <label for="pdgaNumber">PDGA Number</label>
-                            <input type="text" id="pdgaNumber" placeholder="178379">
-                        </div>
-                        <div class="input-group">
-                            <label for="whatif">What-If Rounds <span class="label-hint">(comma-separated ratings)</span></label>
-                            <input type="text" id="whatif" placeholder="1000, 1020, 980">
-                        </div>
-                        <!-- <button onclick="calculateRating()">Calculate →</button> -->
-                         <button onclick="calculateRating()" disabled style="opacity:.4; cursor:not-allowed;">Calculate →</button>
-                    </div>
-                    <div id="spinner" class="spinner" style="display: none;"></div>
-                    <div id="result-container" style="display:none;">
-                        <div id="rating-display" class="rating-display"></div>
-                        <div class="rounds-grid">
-                            <div id="incoming-col" class="rounds-col"></div>
-                            <div id="outgoing-col" class="rounds-col"></div>
-                            <div id="outlier-col" class="rounds-col"></div>
-                        </div>
-                    </div>
-                    <pre id="result-error" style="display:none;"></pre>
-                </div>
-
-                <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-                    async function calculateRating() {
-                        const pdga = document.getElementById('pdgaNumber').value;
-                        const whatif = document.getElementById('whatif').value;
-                        const spinner = document.getElementById('spinner');
-                        const container = document.getElementById('result-container');
-                        const errorEl = document.getElementById('result-error');
-
-                        container.style.display = 'none';
-                        errorEl.style.display = 'none';
-                        spinner.style.display = 'flex';
-
-                        const query = new URLSearchParams({ pdga });
-                        if (whatif) query.append("whatif", whatif.replace(/\s/g, ''));
-
-                        try {
-                            const res = await fetch(`https://tylerjtiede-github-io.onrender.com/api/calculate?${query.toString()}`);
-                            const data = await res.json();
-                            spinner.style.display = 'none';
-
-                            if (data.error) {
-                                errorEl.textContent = `Error: ${data.error}`;
-                                errorEl.style.display = 'block';
-                                return;
-                            }
-
-                            const ratingDisplay = document.getElementById('rating-display');
-                            const sign = data.rating_change >= 0 ? '+' : '';
-                            const changeClass = data.rating_change >= 0 ? 'positive' : 'negative';
-                            ratingDisplay.innerHTML = `
-                                <div class="rating-number">${data.pdga_rating}</div>
-                                <div class="rating-change ${changeClass}">${sign}${data.rating_change}</div>
-                                <div class="rating-cutoff">Outlier cutoff: <strong>${data.drop_below}</strong></div>
-                            `;
-
-                            const incomingCol = document.getElementById('incoming-col');
-                            if (data.incoming_rounds?.length) {
-                                incomingCol.innerHTML = '<div class="rounds-col-title">Adding</div>' +
-                                    data.incoming_rounds.map(rd => `<div class="round-row"><span class="round-name">${rd.name} R${rd.round}</span><span class="round-rating">${rd.rating}</span></div>`).join('');
-                            }
-
-                            const outgoingCol = document.getElementById('outgoing-col');
-                            if (data.outgoing_rounds?.length) {
-                                outgoingCol.innerHTML = '<div class="rounds-col-title">Dropping</div>' +
-                                    data.outgoing_rounds.map(rd => `<div class="round-row"><span class="round-name">${rd.name} R${rd.round}</span><span class="round-rating">${rd.rating}</span></div>`).join('');
-                            }
-
-                            const outlierCol = document.getElementById('outlier-col');
-                            if (data.outlier_rounds?.length) {
-                                outlierCol.innerHTML = '<div class="rounds-col-title">Outliers</div>' +
-                                    data.outlier_rounds.map(rd => `<div class="round-row"><span class="round-name">${rd.name} R${rd.round}</span><span class="round-rating outlier">${rd.rating}</span></div>`).join('');
-                            } else {
-                                outlierCol.innerHTML = '<div class="rounds-col-title">Outliers</div><div class="no-outliers">No outlier rounds ✓</div>';
-                            }
-
-                            container.style.display = 'block';
-                            container.classList.add('fade-in');
-
-                        } catch (err) {
-                            spinner.style.display = 'none';
-                            errorEl.textContent = 'Error: ' + err.message;
-                            errorEl.style.display = 'block';
-                        }
-                    }
-                </script>
-            </article>
+            <div class="section-label">Projects</div>
 
             <!-- blamelog -->
-            <!-- <article class="project project--featured">
+            <article class="project project--featured">
                 <div class="project-tag">Python · Open Source · Developer Tooling</div>
                 <div class="project-work-badge project-work-badge--wip">In Progress</div>
                 <h3 class="project-title">blamelog</h3>
                 <p class="project-desc">
                     A Python CLI tool that layers <code>git blame</code> authorship data with churn scoring and AST-based test gap detection to surface the highest-risk files in a codebase — not just what changed, but what changed often, without test coverage, and who owns it. Uses git history as a cache invalidation signal to avoid redundant analysis on unchanged files. Built with a <code>src/</code> layout, Click, Rich, and GitPython; distributed via PyPI with GitHub Actions CI.
-                </p>    
+                </p>
                 <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/blamelog">GitHub ↗</a>
-            </article> -->
+            </article>
 
             <!-- lift-tracker -->
-            <!-- <article class="project project--featured">
+            <article class="project project--featured">
                 <div class="project-tag">Python · FastAPI · SQLite · Pydantic</div>
                 <div class="project-work-badge project-work-badge--wip">In Progress</div>
                 <h3 class="project-title">lift-tracker</h3>
@@ -246,19 +131,26 @@
                     A backend service for tracking and analyzing progressive overload in strength training. Log sessions via a REST API built with FastAPI; the service computes progression curves, plateau detection, and volume load trends over time, persisted in SQLite. Designed with realistic backend concerns in mind: input validation, structured error handling, and a clean separation between data ingestion and analytics layers.
                 </p>
                 <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/lift-tracker">GitHub ↗</a>
-            </article> -->
+            </article>
 
             <!-- RF Generator -->
-            <!-- <article class="project project--featured">
+            <article class="project project--featured">
                 <div class="project-tag">Arduino · Python · PyQt5 · I²C · Embedded C</div>
                 <div class="project-work-badge">MKS Instruments</div>
                 <h3 class="project-title">RF Generator Test Board</h3>
                 <p class="project-desc">Designed and built a programmable hardware emulation platform to simulate RF generator control systems, enabling automated regression testing of firmware configurations with minimal manual setup. Developed embedded firmware for I²C command sequences and real-time telemetry capture, a standalone Python GUI for live command-and-monitor workflows, and integrated the full platform into a large-scale pre-existing regression suite — extending coverage without disrupting established CI pipelines.</p>
                 <a class="project-link" target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">LinkedIn ↗</a>
-            </article> -->
+            </article>
 
             <!-- Grid -->
-            <!-- <div class="projects-grid">
+            <div class="projects-grid">
+
+                <article class="project project--card">
+                    <div class="project-tag">Python · Flask · BeautifulSoup · NumPy</div>
+                    <h3 class="project-title">PDGA Rating Calculator</h3>
+                    <p class="project-desc">Scrapes a player's PDGA profile to predict their official rating before the next update — no manual round entry required. Detects "Now Playing" and "Recent Events" pages, computes outlier cutoffs, and surfaces rounds being added or dropped. Exposed as a REST API via Flask; deployed on Render.</p>
+                    <a class="project-link" target="_blank" href="https://github.com/tylerjtiede/pdga-rating-calculator">GitHub ↗</a>
+                </article>
 
                 <article class="project project--card">
                     <div class="project-tag">LabVIEW</div>
@@ -295,13 +187,27 @@
                     <a class="project-link" target="_blank" href="https://www.youtube.com/embed/s3Ynh-EgRVM">Watch Demo ↗</a>
                 </article>
 
-            </div> -->
-        <!-- </section> -->
+            </div>
+        </section>
 
         <!-- Experience -->
-        <!-- <section class="section" id="experience">
+        <section class="section" id="experience">
             <div class="section-label">Experience</div>
             <div class="experience-list">
+
+                <div class="exp-item">
+                    <div class="exp-meta">
+                        <span class="exp-company">Mastodon Design (CACI)</span>
+                        <span class="exp-period">May 2026 – Present</span>
+                    </div>
+                    <div class="exp-role">Embedded Software Engineer · Rochester, NY</div>
+                    <ul class="exp-bullets">
+                        <li>Develop embedded C++ software for custom hardware platforms running embedded Linux, within a Yocto-based build environment.</li>
+                        <li>Implement inter-process and networked messaging using ZMQ and MessagePack serialization.</li>
+                        <li>Design low-level data management and firmware configuration systems for resource-constrained embedded hardware.</li>
+                        <li>Contribute to code reviews and testing practices as part of an embedded systems team.</li>
+                    </ul>
+                </div>
 
                 <div class="exp-item">
                     <div class="exp-meta">
@@ -341,29 +247,27 @@
                         <li>Helped develop web apps including a campus emergency alert system using PHP, Laravel, Bootstrap, and MySQL.</li>
                     </ul>
                 </div>
-
             </div>
-        </section> -->
+        </section>
 
         <!-- Education -->
-        <!-- <section class="section section--edu">
+        <section class="section section--edu">
             <div class="section-label">Education</div>
             <div class="edu-block">
                 <div class="edu-degree">B.S. Applied Physics</div>
                 <div class="edu-school">SUNY Geneseo</div>
                 <div class="edu-detail">Minor in Mathematics · May 2021</div>
             </div>
-        </section> -->
+        </section>
 
     </main>
 
     <footer>
         <div class="footer-inner">
-            <!-- <span>Tyler Tiede · Software Engineer</span> -->
-             <span>Tyler Tiede</span>
+            <span>Tyler Tiede</span>
             <span class="footer-links">
                 <a target="_blank" href="https://github.com/tylerjtiede">GitHub</a>
-                <!-- <a target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">LinkedIn</a> -->
+                <a target="_blank" href="https://www.linkedin.com/in/tylerjtiede/">LinkedIn</a>
                 <a target="_blank" href="https://www.pdga.com/player/178379">PDGA</a>
             </span>
             <span>© 2026</span>
